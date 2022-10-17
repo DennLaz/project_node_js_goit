@@ -3,7 +3,7 @@ import "./index.css";
 function App() {
   return (
     <div className="App">
-      <h2>PRO TEST Roman</h2>
+      <h2>PRO TEST Vitalii</h2>
     </div>
   );
 }
