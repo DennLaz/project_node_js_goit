@@ -14,6 +14,7 @@
   --text-secondary: #555555;
   --text-light: #ffffff;
   --text-footer: rgba(255, 255, 255, 0.4);
+  --text-input-placeholder: #bbbbbb;
   --color-active-menu: #ff6b09;
   --color-border: #e2e3e5;
   --color-border-bottom: 1px solid #00122f; /*after title on page*/
@@ -24,10 +25,10 @@
   --main-font-famali: "Montserrat", sans-serif;
 }
 
-body * {
+* {
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -59,6 +60,7 @@ ul {
 }
 
 .container {
+  padding: 0 10px;
   margin: 0 auto;
   width: 100%;
 }

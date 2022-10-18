@@ -1,0 +1,22 @@
+.text {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+.wrapper {
+    background-color: var(--bcg-btn-light);
+    box-shadow: var(--color-shodow);
+    width: 280px;
+    padding: 40px 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 501px;
+        padding: 60px 32px 48px 32px;
+    }
+}

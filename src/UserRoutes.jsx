@@ -6,8 +6,8 @@ import { Routes, Route } from 'react-router-dom';
 
 const AuthPage = lazy(() => import('./pages/AuthPage'));
 // const ContactPage = lazy(() => import('./pages/ContactPage'));
-// const LoginPage = lazy(() => import('./pages/LoginPage'));
-// const RegisterPage = lazy(() => import('./pages/RegisterPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const UserRoutes = () => {
@@ -15,6 +15,8 @@ const UserRoutes = () => {
     <Suspense fallback={<p>...Loading Page</p>}>
       <Routes>
         <Route path="/" element={<AuthPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
 
         {/* <Route element={<PrivateRoute />}>
           <Route path="contacts" element={<ContactPage />} />
