@@ -3,10 +3,10 @@ import s from "./button.module.scss";
 
 const Button = (props) => {
 
-  const { type, text, onClick, white } = props;
+  const { type, text, onClick, active } = props;
     
   const setClass = () => {
-    return white? s.btn_white : s.btn;
+    return active? s.btn_active : s.btn;
   }
     
   return (
@@ -20,7 +20,7 @@ const Button = (props) => {
 };
 
 Button.defaultProps = {
-  white: false,
+  active: false,
   type: "submit",
   onClick: () => {},
 };
