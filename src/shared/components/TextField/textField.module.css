@@ -1,6 +1,7 @@
-.input {
-    width: 240px;
-    height: 56px;
+
+
+.input { 
+    width: 100%;  
     outline: none;
     border: 1px solid var(--color-input);
     padding: 20px;
@@ -9,13 +10,15 @@
     font-size: 14px;
     line-height: 1.21;
     color: var(--text-input-placeholder);
-    margin-bottom: 24px;
    
 }
 
- @media screen and (min-width: 768px) {
+.input::placeholder{
+    color: var(--text-input-placeholder);
+}
+
+@media screen and (min-width: 768px) {
     .input {
-        width: 425px;
         padding: 20px 25px;
     }
  }

@@ -1,5 +1,5 @@
-import { nanoid } from "@reduxjs/toolkit";
-import { useMemo } from "react";
+// import { nanoid } from "@reduxjs/toolkit";
+// import { useMemo } from "react";
 import PropTypes from "prop-types";
 
 import style from "./textField.module.css";
@@ -14,20 +14,19 @@ const TextField = (props) => {
     type,
     pattern,
     title,
-    // minLength,
-    // maxLength,
-    // min,
-    // max,
+    minLength,
+    maxLength,
+    className,
   } = props;
 
-  const id = useMemo(() => nanoid(), []);
+  // const id = useMemo(() => nanoid(), []);
 
   return (
     <div>
       <input
         onChange={onChange}
-        id={id}
-        className={style.input}
+        // id={id}
+        className={`${style.input} ${className}`}
         type={type}
         name={name}
         value={value}
@@ -35,10 +34,8 @@ const TextField = (props) => {
         required={required}
         pattern={pattern}
         title={title}
-        // minLength={minLength}
-        // maxLength={maxLength}
-        // min={min}
-        // max={max}
+        minLength={minLength}
+        maxLength={maxLength}
       />
     </div>
   );
