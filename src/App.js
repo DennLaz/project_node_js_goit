@@ -1,5 +1,6 @@
 import UserRoutes from "./UserRoutes";
-import Button from './shared/components/Button'
+
+import Footer from "./modules/Footer/Footer";
 
 import "./index.scss";
 
@@ -7,9 +8,10 @@ function App() {
   return (
     <>
       <UserRoutes />
-      <Button type="submit" active="true" text="Sign in" />
-      <Button text="Sign up"/>
+      <Footer/>
+
     </>
+    
   );
 }
 
