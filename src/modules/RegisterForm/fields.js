@@ -1,12 +1,12 @@
 const fields = {
   name: {
-    placeholder: "Name",
+    placeholder: "Nickname",
     name: "name",
     required: true,
     type: "text",
     pattern: "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
-    minLength: 3,
-    maxLength: 254,
+    minLength: 2,
+    maxLength: 10,
     title: "Input your name",
   },
   email: {

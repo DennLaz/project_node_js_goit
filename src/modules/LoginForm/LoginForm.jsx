@@ -7,7 +7,7 @@ import TextField from "../../shared/components/TextField";
 import fields from "./fields";
 import initialState from "./initialState";
 
-import style from "./loginForm.module.css"
+import style from "./loginForm.module.scss"
 
 const LoginForm = ({ onSubmit }) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState })

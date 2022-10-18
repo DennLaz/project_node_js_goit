@@ -1,6 +1,6 @@
 import RegisterForm from "../../modules/RegisterForm";
 
-import style from "./registerPage.module.css";
+import style from "./registerPage.module.scss";
 
 const RegisterPage = () => {
   return (
