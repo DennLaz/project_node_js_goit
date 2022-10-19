@@ -4,7 +4,9 @@ import style from "./testPage.module.scss"
 
 const TestPage = () => {
     return ( 
-    <div><Questions /></div>
+        <div>
+            <p>Question 1/12</p>
+            <Questions /></div>
 )
 }
 
