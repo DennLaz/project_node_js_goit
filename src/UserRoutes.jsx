@@ -1,31 +1,33 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// import PrivateRoute from 'shared/components/PrivateRoute';
-// import PublicRoute from 'shared/components/PublicRoute';
+import Loader from "./shared/components/Loader"
+
+import PrivateRoute from './shared/components/PrivateRoute';
+import PublicRoute from './shared/components/PublicRoute';
 
 const AuthPage = lazy(() => import('./pages/AuthPage'));
-// const ContactPage = lazy(() => import('./pages/ContactPage'));
+const TestPage = lazy(() => import('./pages/TestPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const UserRoutes = () => {
   return (
-    <Suspense fallback={<p>...Loading Page</p>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<AuthPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+        <Route path="test" element={<TestPage />} />
 
-        {/* <Route element={<PrivateRoute />}>
-          <Route path="contacts" element={<ContactPage />} />
+        <Route element={<PrivateRoute />}>
+          {/* <Route path="test" element={<TestPage />} />
+          <Route path="result" element={<ResultPage />} /> */}
         </Route>
 
         <Route element={<PublicRoute />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
-        </Route> */}
+        </Route>
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

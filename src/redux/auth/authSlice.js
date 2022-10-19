@@ -1,57 +1,52 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-import { signup, login, logout, getCurrent } from './authOperations';
-
-const initialState = {
-  user: {},
-  token: '',
-  isLogin: false,
-  loading: false,
-  error: null,
-};
-
-const pending = store => ({ ...store, loading: true, error: null });
-
-const rejected = (store, { payload }) => ({
-  ...store,
-  loading: false,
-  error: payload,
-});
-
-const fulfilled = (store, { payload }) => {
-  store.loading = false;
-  store.user = payload.user;
-  store.token = payload.token;
-  store.isLogin = true;
-};
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  createNewUser,
+  loginOldUser,
+  getUser,
+  userLogout,
+} from "./authOperations";
+import { pending, rejected } from "../../shared/utils/pendingAndRejected";
+import initialState from "./authInitialState";
 
 const authSlice = createSlice({
-  name: 'auth',
+  name: "auth",
   initialState,
   extraReducers: {
-    /* Register */
-    [signup.pending]: pending,
-    [signup.fulfilled]: fulfilled,
-    [signup.rejected]: rejected,
+    [createNewUser.pending]: pending,
+    [createNewUser.rejected]: rejected,
+    [createNewUser.fulfilled]: (store, { payload }) => ({
+      ...store,
+      loading: false,
+      user: {
+        userName: payload.username,
+      },
+    }),
 
-    /* Login */
-    [login.pending]: pending,
-    [login.fulfilled]: fulfilled,
-    [login.rejected]: rejected,
+    [loginOldUser.pending]: pending,
+    [loginOldUser.rejected]: rejected,
+    [loginOldUser.fulfilled]: (store, { payload }) => ({
+      ...store,
+      loading: false,
+      token: payload.accessToken,
+      isLogin: true,
+      user: {
+        userId: payload.user.id,
+        userName: payload.user.username,
+      },
+    }),
 
-    /* Login */
-    [logout.pending]: pending,
-    [logout.fulfilled]: () => ({ ...initialState }),
-    [logout.rejected]: rejected,
+    [userLogout.pending]: pending,
+    [userLogout.rejected]: rejected,
+    [userLogout.fulfilled]: () => initialState,
 
-    /* Current */
-    [getCurrent.pending]: pending,
-    [getCurrent.fulfilled]: (store, { payload }) => {
-      store.loading = false;
-      store.user = payload;
-      store.isLogin = true;
-    },
-    [getCurrent.rejected]: rejected,
+    [getUser.pending]: pending,
+    [getUser.rejected]: () => initialState,
+    [getUser.fulfilled]: (store, { payload }) => ({
+      ...store,
+      loading: false,
+      isLogin: true,
+      user: { userId: payload.id, userName: payload.username },
+    }),
   },
 });
 

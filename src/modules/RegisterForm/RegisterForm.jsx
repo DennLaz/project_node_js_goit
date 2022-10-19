@@ -12,7 +12,7 @@ import style from "./registerForm.module.scss"
 const RegisterForm = ({ onSubmit }) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState });
 
-    const { name, email, password } = state;
+    const { username, email, password } = state;
 
     const navigate = useNavigate();
     const handleClick = () => {
@@ -21,7 +21,7 @@ const RegisterForm = ({ onSubmit }) => {
 
     return (
         <form className="" onSubmit={handleSubmit}>
-            <TextField onChange={handleChange} value={name} {...fields.name} className={style.input} />
+            <TextField onChange={handleChange} value={username} {...fields.name} className={style.input} />
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input} />
             <TextField onChange={handleChange} value={password} {...fields.password} />
             <div className=""></div>

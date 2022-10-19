@@ -1,13 +1,13 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-// import useAuth from "shared/hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
 
 const PublicRoute = () => {
-    // const isLogin = useAuth();
+    const isLogin = useAuth();
 
-    // if (isLogin) {
-    //     return <Navigate to="/contacts" />
-    // }
+    if (isLogin) {
+        return <Navigate to="/" />
+    }
 
     return <Outlet />
 }
