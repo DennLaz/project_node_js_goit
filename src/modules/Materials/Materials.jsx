@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import style from "./materials.module.scss";
 
 const Materials = () => {
@@ -19,24 +20,16 @@ const Materials = () => {
           <div className={style.vector}></div>
           <ol type="1" className={style.list}>
             <li>
-              <a href="https://dou.ua/" className={style.link} rel="noopener noreferrer" target="_blank">
-                dou.ua
-              </a>
+              <Link to={{ pathname: "//dou.ua/" }} className={style.link}target="_blank">dou.ua</Link>
             </li>
             <li>
-              <a href="https://habr.com/ru/all/" className={style.link} rel="noopener noreferrer" target="_blank">
-                Habr
-              </a>              
+              <Link to={{ pathname: "//habr.com/ru/all/" }} className={style.link}target="_blank">Habr</Link>
             </li>
             <li>
-              <a href="https://www.facebook.com/" className={style.link} rel="noopener noreferrer" target="_blank">
-              facebook.com/QA
-              </a>              
+              <Link to={{ pathname: "//www.facebook.com/groups/163229277483308/" }} className={style.link}target="_blank">facebook.com/QA</Link>
             </li>
             <li>
-              <a href="https://goit.ua/?lang=uk" className={style.link} rel="noopener noreferrer" target="_blank">
-                goit.ua
-              </a> 
+              <Link to={{ pathname: "//goit.ua/" }} className={style.link}target="_blank">goit.ua</Link>
             </li>
           </ol>
         </div>
