@@ -1,0 +1,38 @@
+.wrapper {
+  margin-top: 42px;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  @media (min-width: 768px) {
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
+
+.p {
+  padding-top: 14px;
+  width: 130px;
+  margin: 0 auto;
+  border-bottom: var(--color-border-bottom);
+  @media (min-width: 768px) {
+    padding-top: 20px;
+    width: 322px;
+  }
+}
+
+.content {
+  display: grid;
+  justify-content: center;
+  @media (min-width: 768px) {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 32px;
+  }
+}
