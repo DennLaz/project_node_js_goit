@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { RotatingLines } from "react-loader-spinner";
+import { Triangle } from "react-loader-spinner";
 
 import style from "./loader.module.scss";
 
@@ -9,11 +9,13 @@ const Loader = () => {
   return createPortal(
     <div className={style.overlay}>
       <div className={style.loader}>
-        <RotatingLines
-          strokeColor="#fc842d"
-          strokeWidth="5"
-          animationDuration="0.75"
-          width="96"
+        <Triangle
+          height="200"
+          width="200"
+          color="#ff6b09d9"
+          ariaLabel="triangle-loading"
+          wrapperStyle={{}}
+          wrapperClassName=""
           visible={true}
         />
       </div>
