@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { isLogin } from "redux/auth/authSelectors";
+import { isLogin } from "../../redux/auth/authSelectors";
 
 const useAuth = () => {
   const isAuth = useSelector(isLogin);

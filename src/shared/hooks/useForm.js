@@ -13,7 +13,7 @@ const useForm = ({ onSubmit, initialState }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ ...state });
-    reset();
+    // reset();
   };
 
   const reset = () => {
