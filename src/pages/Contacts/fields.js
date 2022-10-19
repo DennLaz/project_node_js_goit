@@ -1,0 +1,51 @@
+const fields = [
+  {
+    url: "https://avatars.githubusercontent.com/u/97526411?v=4",
+    name: "Denys Lazarenko",
+    post: "Front-End Developer",
+    about: "Team Lead",
+    GitHub: "https://github.com/DennLaz",
+    LinkedIn: "https://www.linkedin.com/in/denys-lazarenko-050885237/",
+  },
+  {
+    url: "https://avatars.githubusercontent.com/u/100082550?v=4",
+    name: "Ihor Riabenco",
+    post: "Front-End Developer",
+    about: "Scram master",
+    GitHub: "https://github.com/iryabenkoff",
+    LinkedIn: "https://github.com/iryabenkoff",
+  },
+  {
+    url: "https://nefalit.github.io/filmoteka/team-lena.741a032d.jpeg",
+    name: "Olena Pianova",
+    post: "Front-End Developer",
+    about: "Developer",
+    GitHub: "https://github.com/helenserdiuk",
+    LinkedIn: "https://www.linkedin.com/in/olena-pianova-4a33b9252/",
+  },
+  {
+    url: "https://avatars.githubusercontent.com/u/97532271?v=4",
+    name: "Dmitriy Narishkin",
+    post: "Front-End Developer",
+    about: "Developer",
+    GitHub: "https://github.com/snow625",
+    LinkedIn: "https://www.linkedin.com/in/dmitriy-naryshkin-00a546245/",
+  },
+  {
+    url: "https://nefalit.github.io/filmoteka/team-roma.c97ba87a.jpeg",
+    name: "Roman Lyzun",
+    post: "Front-End Developer",
+    about: "Developer",
+    GitHub: "https://github.com/Romalyy",
+    LinkedIn: "https://www.linkedin.com/in/roman-lizun/",
+  },
+  {
+    url: "https://avatars.githubusercontent.com/u/43436409?v=4",
+    name: "Vitaly Tymiv",
+    post: "Front-End Developer",
+    about: "Developer",
+    GitHub: "https://github.com/Tymivv",
+    LinkedIn: "https://github.com/Tymivv",
+  },
+];
+export default fields;
