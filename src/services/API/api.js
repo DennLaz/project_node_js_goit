@@ -31,7 +31,7 @@ export const logoutFromAPI = async (token) => {
 export const getCurrentUser = async (token) => {
   setToken(token);
   try {
-    const { data } = await instance.get("/user");
+    const { data } = await instance.get("/users");
     return data;
   } catch (error) {
     setToken();

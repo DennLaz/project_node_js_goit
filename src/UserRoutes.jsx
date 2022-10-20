@@ -1,27 +1,32 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import Loader from "./shared/components/Loader"
+import Loader from "./shared/components/Loader";
 
-import PrivateRoute from './shared/components/PrivateRoute';
-import PublicRoute from './shared/components/PublicRoute';
+import PrivateRoute from "./shared/components/PrivateRoute";
+import PublicRoute from "./shared/components/PublicRoute";
 
-const AuthPage = lazy(() => import('./pages/AuthPage'));
-const TestPage = lazy(() => import('./pages/TestPage'));
-const LoginPage = lazy(() => import('./pages/LoginPage'));
-const RegisterPage = lazy(() => import('./pages/RegisterPage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+const AuthPage = lazy(() => import("./pages/AuthPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const TestPage = lazy(() => import("./pages/TestPage"));
+const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<AuthPage />} />
-        <Route path="test" element={<TestPage />} />
+          <Route path="test" element={<TestPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="materials" element={<MaterialsPage />} />
 
         <Route element={<PrivateRoute />}>
           {/* <Route path="test" element={<TestPage />} />
-          <Route path="result" element={<ResultPage />} /> */}
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="materials" element={<MaterialsPage />} /> */}
         </Route>
 
         <Route element={<PublicRoute />}>
