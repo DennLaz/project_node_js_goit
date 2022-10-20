@@ -9,13 +9,13 @@ import App from "./App";
 import { store, persistor } from "./redux/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <App />
       </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </BrowserRouter>
+  // </React.StrictMode>
 );
