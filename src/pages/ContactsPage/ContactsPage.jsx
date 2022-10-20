@@ -1,8 +1,8 @@
-import styles from "./contacts.module.scss";
+import styles from "./contactsPage.module.scss";
 import Contact from "./Contact";
 import fields from "./fields";
 
-const Contacts = () => {
+const ContactsPage = () => {
   return (
     <div className="container">
       <div className={styles.wrapper}>
@@ -18,4 +18,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default ContactsPage;

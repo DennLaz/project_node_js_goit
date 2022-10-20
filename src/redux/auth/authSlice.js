@@ -27,10 +27,9 @@ const authSlice = createSlice({
     [loginOldUser.fulfilled]: (store, { payload }) => ({
       ...store,
       loading: false,
-      token: payload.accessToken,
+      token: payload.token,
       isLogin: true,
       user: {
-        userId: payload.user.id,
         userName: payload.user.username,
       },
     }),
