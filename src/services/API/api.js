@@ -23,9 +23,9 @@ export const loginInAPI = async (userData) => {
 };
 
 export const logoutFromAPI = async (token) => {
-  const { data } = await instance.post("/users/logout", token);
-  setToken();
-  return data;
+  // const { data } = await instance.post("/users/logout", token);
+  setToken("");
+  // return data;
 };
 
 export const getCurrentUser = async (token) => {
