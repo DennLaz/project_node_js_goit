@@ -1,14 +1,26 @@
-// import UserRoutes from "./UserRoutes";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux/es/exports";
+import { getUser } from "./redux/auth/authOperations";
+
+import UserRoutes from "./UserRoutes";
+
+// import Header from "./modules/Header/Header";
 import Footer from "./modules/Footer/Footer";
-// import Materials from "./modules/Materials/";
+
 import "./index.scss";
-import Results from "./pages/Results";
+// import Results from "./pages/Results";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+
   return (
     <>
-      {/* <UserRoutes /> */}
-      <Results value="8" />
+      {/* <Header/> */}
+      <UserRoutes />
       <Footer />
     </>
   );

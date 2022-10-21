@@ -1,31 +1,38 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 
-// import PrivateRoute from 'shared/components/PrivateRoute';
-// import PublicRoute from 'shared/components/PublicRoute';
+import Loader from "./shared/components/Loader";
 
-const AuthPage = lazy(() => import('./pages/AuthPage'));
-// const ContactPage = lazy(() => import('./pages/ContactPage'));
-const LoginPage = lazy(() => import('./pages/LoginPage'));
-const RegisterPage = lazy(() => import('./pages/RegisterPage'));
-const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+import PrivateRoute from "./shared/components/PrivateRoute";
+import PublicRoute from "./shared/components/PublicRoute";
+
+const AuthPage = lazy(() => import("./pages/AuthPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const TestPage = lazy(() => import("./pages/TestPage"));
+const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 const UserRoutes = () => {
   return (
-    <Suspense fallback={<p>...Loading Page</p>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<AuthPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+          <Route path="test" element={<TestPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="materials" element={<MaterialsPage />} />
 
-        {/* <Route element={<PrivateRoute />}>
-          <Route path="contacts" element={<ContactPage />} />
+        <Route element={<PrivateRoute />}>
+          {/* <Route path="test" element={<TestPage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+          <Route path="materials" element={<MaterialsPage />} /> */}
         </Route>
 
         <Route element={<PublicRoute />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
-        </Route> */}
+        </Route>
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

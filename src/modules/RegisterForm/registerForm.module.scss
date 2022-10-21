@@ -1,3 +1,18 @@
 .input {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+}
+
+.last_input {
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
 }

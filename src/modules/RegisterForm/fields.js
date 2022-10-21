@@ -1,13 +1,13 @@
 const fields = {
   name: {
     placeholder: "Nickname",
-    name: "name",
+    name: "username",
     required: true,
     type: "text",
     pattern: "^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$",
     minLength: 2,
     maxLength: 10,
-    title: "Input your name",
+    title: "Input your nickname",
   },
   email: {
     placeholder: "E-mail",
@@ -27,6 +27,7 @@ const fields = {
     minLength: 8,
     maxLength: 100,
     pattern: "(?=.*[0-9])(?=.*[a-z]|[0-9]).{7,}",
+    title: "Password must contain at least 8 characters",
   },
 };
 
