@@ -17,9 +17,9 @@ const authSlice = createSlice({
     [createNewUser.fulfilled]: (store, { payload }) => ({
       ...store,
       loading: false,
-      user: {
-        userName: payload.username,
-      },
+      // user: {
+      //   userName: payload.username,
+      // },
     }),
 
     [loginOldUser.pending]: pending,
@@ -30,6 +30,7 @@ const authSlice = createSlice({
       token: payload.token,
       isLogin: true,
       user: {
+        userId: payload.user._id,
         userName: payload.user.username,
       },
     }),
@@ -44,7 +45,7 @@ const authSlice = createSlice({
       ...store,
       loading: false,
       isLogin: true,
-      user: { userId: payload.id, userName: payload.username },
+      user: { userId: payload._id, userName: payload.username },
     }),
   },
 });

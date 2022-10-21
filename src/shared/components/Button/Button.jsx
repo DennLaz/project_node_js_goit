@@ -3,7 +3,7 @@ import s from "./button.module.scss";
 
 const Button = (props) => {
 
-  const { type, text, onClick, active } = props;
+  const { type, text, onClick, active, className } = props;
     
   const setClass = () => {
     return active? s.btn_active : s.btn;
@@ -11,7 +11,7 @@ const Button = (props) => {
     
   return (
     <button
-        className={setClass()}
+        className={`${setClass()} ${className}`}
         onClick={onClick}
         type={type}>
         {text}
