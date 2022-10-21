@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 
-import style from "./radioField.module.scss"
+// import style from "./radioField.module.scss"
 
 const RadioFiled = (props) => {
     const { lable, type, checked, onChange, value, name, id, htmlFor } = props;
