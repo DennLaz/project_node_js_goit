@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { userLogout } from "../../redux/auth/authOperations";
 
 import useAuth from "../../shared/hooks/useAuth";
-import sprite from "../../assets/svg/sprite.svg"
+
 
 import Logo from "../../shared/components/Logo";
 import UserMenu from "./UserMenu";
@@ -13,6 +13,7 @@ import UserInfo from "./UserInfo"
 import MobileMenu from "./MobileMenu";
 import HeaderMenu from "./HeaderMenu";
 
+import sprite from "../../assets/svg/sprite.svg"
 import style from "./header.module.scss";
 
 
@@ -23,20 +24,12 @@ const Header = () => {
     const isLogin = useAuth();
     const dispatch = useDispatch();
     
-//     function changeClassNameHeader({ isActive }) {
-//   const changeStyle = isActive ? style.isActive : style.header;
-//   return changeStyle;
-// }
-    
   const changeStyle = isLogin ? style.header  : style.isActive;
 
     
-    // function onLogout() {
-    //     dispatch(userLogout());
-    // }
-  const handleClickLogOut = () => {
-    dispatch(userLogout());
-  };
+    function onLogout() {
+        dispatch(userLogout());
+    }
 
     const onMenuClick = () => {
         isOpen ? changeOpen(false) : changeOpen(true);
@@ -49,28 +42,23 @@ const Header = () => {
         <header className={changeStyle}>
             
             <div className={style.container}>
-                <div><Logo /></div>
+                <div><Logo/></div>
                 
                 
                 <div className={style.wrapper}>
                     <HeaderMenu />
                     <UserInfo />
                     {isLogin && 
-                        // <button onClick={handleClickLogOut}>
-                            <svg  className={style.icon_logout}>
+                            <svg onClick={onLogout}  className={style.icon_logout}>
                                 <use  href={`${sprite}#icon-sign-out`}></use>
                             </svg>
-                        // </button>
                     }
                    
                 
-                <UserMenu onClick={onMenuClick} isOpen={isOpen} />
+                    <UserMenu onClick={onMenuClick} isOpen={isOpen} />
                     <MobileMenu onClick={onMenuClick} isOpen={isOpen} />
                     </div>
             </div>
-            {/* <div className={style.wrapper_mobile}> */}
-                
-            {/* </div> */}
         </header>       
   );
 };

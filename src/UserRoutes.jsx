@@ -23,14 +23,15 @@ const UserRoutes = () => {
           <Route path="/" element={<AuthPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          
         </Route>
 
         <Route element={<PrivateRoute />}>
             <Route path="/test" element={<TestPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
-            <Route path="/materials" element={<MaterialsPage />} />  
+          <Route path="/materials" element={<MaterialsPage />} /> 
+          
         </Route>
-
+        <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
         
       </Routes>

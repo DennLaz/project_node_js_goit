@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+
 import useAuth from "../../../shared/hooks/useAuth";
 
 import { items } from '../items';
@@ -15,7 +16,7 @@ function HeaderMenu() {
   const isLogin = useAuth();
   
   const findItems = items.filter(item => !item.private);
-  const publicItems = items.filter(item => item.private === false || item.private !== false);
+  const publicItems = items.filter(item => item.private === false || item.private === true);
 
   const elements = findItems.map(({id, link, title}) => 
     <li key={id} className={style.item}>

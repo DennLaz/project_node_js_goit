@@ -2,11 +2,9 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { getUser } from "./redux/auth/authOperations";
 
+import Header from "./modules/Header";
+import Footer from "./modules/Footer";
 import UserRoutes from "./UserRoutes";
-
-
-import Header from "./modules/Header/Header";
-import Footer from "./modules/Footer/Footer";
 
 import "./index.scss";
 // import Results from "./pages/Results";
@@ -21,8 +19,9 @@ function App() {
   return (
     <>
       <Header/>
-
+      
       <UserRoutes />
+      
       <Footer />
     </>
   );

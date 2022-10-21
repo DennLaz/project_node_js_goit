@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { userName } from '../../../redux/auth/authSelectors';
@@ -10,15 +9,10 @@ import style from "./user-info.module.scss";
 
 function UserInfo() {
     const isLogin = useAuth();
+
     const name = useSelector(userName);
 
     const newName = isLogin ? name.toUpperCase().charAt(0) : '';
-
-    const dispatch = useDispatch();
-    
-    function onLogout() {
-        dispatch(userLogout())
-    }
 
     return (
         <>

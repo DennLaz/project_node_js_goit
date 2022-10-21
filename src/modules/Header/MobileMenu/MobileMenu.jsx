@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { NavLink } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { userLogout } from "../../../redux/auth/authOperations";
 
@@ -28,10 +28,8 @@ const MobileMenu = ({ onClick, isOpen }) => {
     function onLogout() {
         dispatch(userLogout());
     }
-//   const handleClickLogOut = () => {
-//     dispatch(userLogout());
-//   };
-    // console.log(handleClickLogOut)
+
+    const changeStyle = isOpen ? style.open  : style.overlay;
     
     const privateItems = items.filter(item => item.private === false);
     const publicItems = items.filter(item => item.private === false || item.private !== false);
@@ -67,7 +65,7 @@ const MobileMenu = ({ onClick, isOpen }) => {
                         <ul className={style.mobile_menu} >
                             {publicElements}
                         </ul>
-                            <div type="button" onClick={onLogout} className={style.wrapper}>
+                            <div onClick={onLogout} className={style.wrapper}>
                                 <svg onClick={onClick} className={style.icon_logout}>
                                     <use href={`${sprite}#icon-sign-out`}></use>
                                 </svg>
