@@ -9,7 +9,7 @@ import Header from "./modules/Header/Header";
 import Footer from "./modules/Footer/Footer";
 
 import "./index.scss";
-// import Results from "./pages/Results";
+import Results from "./pages/Results";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +21,9 @@ function App() {
   return (
     <>
       <Header />
-      <UserRoutes />
-      <Materials />
+       <Results value={2}/> 
+      {/* <UserRoutes />
+      <Materials /> */}
       <Footer />
     </>
   );
