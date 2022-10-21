@@ -12,8 +12,17 @@ import style from "./loginPage.module.scss";
 const LoginPage = () => {
   const dispatch = useDispatch();
 
-  const {loading } = useSelector(getErrorLoadingAuth)
-
+  const { loading } = useSelector(getErrorLoadingAuth)
+  
+  // const handleSubmit = (userData) => {
+  //   console.log(userData);
+  //   // dispatch(loginOldUser(userData));
+  //   // {
+  //   // "email": "dentus25@gmail.com",
+  //   // "password": "123456789"
+  //   // }
+  // };
+  
   const handleSubmit = useCallback(
     (userData) => {
       dispatch(loginOldUser(userData));

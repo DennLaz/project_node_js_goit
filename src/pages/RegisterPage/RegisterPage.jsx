@@ -16,17 +16,17 @@ const RegisterPage = () => {
 
   const { loading} = useSelector(getErrorLoadingAuth);
 
-  const RegisterOk = useSelector(userName)
+  // const RegisterOk = useSelector(userName)
 
-  useEffect(() => {
-    const checkRegistered = () => {
-      return naigate("/login")
-    } 
+  // useEffect(() => {
+  //   const checkRegistered = () => {
+  //     return naigate("/login")
+  //   } 
 
-    if (RegisterOk) {
-      checkRegistered();
-    }
-  }, [RegisterOk, naigate])
+  //   if (RegisterOk) {
+  //     checkRegistered();
+  //   }
+  // }, [RegisterOk, naigate])
 
   const onSubmit = useCallback((userData) => {
     dispath(createNewUser(userData));

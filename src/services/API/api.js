@@ -18,7 +18,7 @@ export const registerInAPI = async (userData) => {
 
 export const loginInAPI = async (userData) => {
   const { data } = await instance.post("/users/login", userData);
-  setToken(data.accessToken);
+  setToken(data.token);
   return data;
 };
 
@@ -31,7 +31,7 @@ export const logoutFromAPI = async (token) => {
 export const getCurrentUser = async (token) => {
   setToken(token);
   try {
-    const { data } = await instance.get("/users");
+    const { data } = await instance.get("/users/current");
     return data;
   } catch (error) {
     setToken();

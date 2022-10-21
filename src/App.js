@@ -4,7 +4,7 @@ import { getUser } from "./redux/auth/authOperations";
 
 import UserRoutes from "./UserRoutes";
 
-// import Header from "./modules/Header/Header";
+import Header from "./modules/Header/Header";
 import Footer from "./modules/Footer/Footer";
 
 import "./index.scss";
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      {/* <Header/> */}
+      <Header />
       <UserRoutes />
       <Footer />
     </>

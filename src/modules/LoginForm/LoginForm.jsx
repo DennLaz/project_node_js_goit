@@ -16,6 +16,7 @@ const LoginForm = ({ onSubmit }) => {
     const { email, password } = state;
 
     const navigate = useNavigate();
+
     const handleClick = () => {
         return navigate("/register")
     }
@@ -25,7 +26,7 @@ const LoginForm = ({ onSubmit }) => {
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input}/>
             <TextField onChange={handleChange} value={password} {...fields.password} className={style.last_input}/>
             <div className={style.wrap}>
-                <Button text="Sign in" type="submite" active="true" />
+                <Button text="Sign in" type="submit" active="true" />
                 <Button text="Sign up" type="button" onClick={handleClick}/>
             </div>
         </form>

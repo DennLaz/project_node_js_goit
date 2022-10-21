@@ -4,9 +4,10 @@ import useAuth from "../../hooks/useAuth";
 
 const PublicRoute = () => {
     const isLogin = useAuth();
+     
 
     if (isLogin) {
-        return <Navigate to="/" />
+        return <Navigate to="/test" />
     }
 
     return <Outlet />
