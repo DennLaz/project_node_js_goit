@@ -2,7 +2,7 @@ export const items = [
     {
         id: 1,
         title: 'Home',
-        link: '/home',
+        link: '/test',
         private: true,
     },
     {

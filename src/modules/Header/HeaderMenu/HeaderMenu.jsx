@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import useAuth from "../../../shared/hooks/useAuth";
 
 import { items } from '../items';
 
@@ -10,8 +11,11 @@ export function changeClassName({ isActive }) {
 }
 
 function HeaderMenu() {
+
+  const isLogin = useAuth();
   
-    const findItems = items.filter(item => !item.private);
+  const findItems = items.filter(item => !item.private);
+  const publicItems = items.filter(item => item.private === false || item.private !== false);
 
   const elements = findItems.map(({id, link, title}) => 
     <li key={id} className={style.item}>
@@ -19,12 +23,26 @@ function HeaderMenu() {
         {title}
       </NavLink>
     </li>
-);
+  );
+  
+  const publicElements = publicItems.map(({id, link, title}) => 
+    <li key={id} className={style.public_item}>
+      <NavLink className={changeClassName} to={link}>
+        {title}
+      </NavLink>
+    </li>
+  );
 
-    return (
-        <ul className={style.menu}>
-            {elements}
-        </ul>
+  return (
+      <> 
+      {
+        isLogin ? <div className={style.wrapper}> <ul className={style.public_menu}>
+              {publicElements}
+        </ul></div> : <ul className={style.menu}>
+              {elements}
+      </ul>
+      }
+      </>
   );
 }
 export default HeaderMenu;

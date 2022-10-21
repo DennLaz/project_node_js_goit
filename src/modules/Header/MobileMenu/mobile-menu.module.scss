@@ -59,3 +59,36 @@
 
     border-bottom: 1px solid var(--color-border);
 }
+
+.link {
+    font-size: 14px;
+    line-height: 0.86;
+    color: var(--color-text);
+}
+
+.isActive {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.isActive::after {
+    content: "";
+    display: block;
+    bottom: -3px;
+    left: 0;
+    height: 1px;
+    background-color: var(--bcg-btn-active);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_logout {
+    width: 16px;
+    height: 16px;
+    margin-top: 28px;
+    z-index: 999;
+}

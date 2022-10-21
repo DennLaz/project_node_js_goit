@@ -7,16 +7,16 @@ import style from "./user-menu.module.scss";
 function UserMenu({onClick, isOpen}) {
 
     return (
-        <div className={style.wraper} >
-            <div className={style.container}>
-
+        <>
+       
+<div>
                 {isOpen ? <svg  onClick={onClick} className={style.icon_menu}>
                     <use href={`${sprite}#icon-close`}></use>
                 </svg> : <svg onClick={onClick} className={style.icon_close}>
                     <use href={`${sprite}#icon-menu`}></use>
                 </svg>}
             </div>
-        </div>
+            </>
     )
 }
 
