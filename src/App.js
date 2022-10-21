@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux/es/exports";
 import { getUser } from "./redux/auth/authOperations";
 
 import UserRoutes from "./UserRoutes";
-import Materials from "./modules/Materials/Materials"
+import Materials from "./modules/Materials/Materials";
 
 import Header from "./modules/Header/Header";
 import Footer from "./modules/Footer/Footer";
@@ -21,9 +21,8 @@ function App() {
   return (
     <>
       <Header />
-       <Results value={2}/> 
-      {/* <UserRoutes />
-      <Materials /> */}
+      <UserRoutes />
+      <Materials />
       <Footer />
     </>
   );

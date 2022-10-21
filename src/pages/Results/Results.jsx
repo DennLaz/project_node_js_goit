@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import styles from "./results.module.scss";
-import displayImages from "./displayImages";
+import setDisplayImages from "./setDisplayImages";
 import { useMediaPredicate } from "react-media-hook";
 
 
@@ -70,7 +70,7 @@ const Results = ({ value }) => {
             Total questions - <span className={styles.span}>12</span>{" "}
           </p>
         </div>
-        {displayImages(correctAnswers)}
+        {setDisplayImages(correctAnswers)}
 
         <button className={styles.btn}>Try again</button>
       </div>
