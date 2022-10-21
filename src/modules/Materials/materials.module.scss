@@ -28,8 +28,8 @@
     linear-gradient(90deg, transparent 90%, var(--bcg-primary)),
     linear-gradient(180deg, transparent 90%, var(--bcg-primary)), 
     url(../../assets/materialsPage/tablet/tablet_x1.webp);
-    background-size: 768px 900px;
-    background-position: center top;
+    background-size: 768px 962px;
+    background-position: center bottom;
     background-repeat: no-repeat;
 
     @media (min-device-pixel-ratio: 2),
@@ -41,8 +41,8 @@
       linear-gradient(90deg, transparent 90%, var(--bcg-primary)),
       linear-gradient(180deg, transparent 90%, var(--bcg-primary)), 
       url(../../assets/materialsPage/tablet/tablet_x2.webp);
-      background-size: 768px 900px;
-      background-position: center top;
+      background-size: 768px 962px;
+      background-position: center bottom;
       background-repeat: no-repeat;
     }
   }
@@ -120,7 +120,7 @@ width: 129px;
 .vector{
 width: 150px;
 opacity: 0.15;
-border: var(--color-border-bottom);
+border: var(--color-border-vector);
 margin-bottom: 8px;
   @media (min-width: 768px) {
     width: 336px;

@@ -7,7 +7,6 @@ import Footer from "./modules/Footer";
 import UserRoutes from "./UserRoutes";
 
 import "./index.scss";
-// import Results from "./pages/Results";
 
 function App() {
   const dispatch = useDispatch();

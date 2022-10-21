@@ -1,11 +1,11 @@
 import styles from "./results.module.scss";
-import img from "../../assets/img/catBad.gif";
-import img1 from "../../assets/img/catMaybe.gif";
-import img2 from "../../assets/img/catWithBall.gif";
-import img3 from "../../assets/img/catGood.gif";
-import img4 from "../../assets/img/catLoading.gif";
+import img from "../../assets/resultPage/catBad.gif";
+import img1 from "../../assets/resultPage/catMaybe.gif";
+import img2 from "../../assets/resultPage/catWithBall.gif";
+import img3 from "../../assets/resultPage/catGood.gif";
+import img4 from "../../assets/resultPage/catLoading.gif";
 
-const DisplayImages = (percent) => {
+const setDisplayImages = (percent) => {
   if (percent < 30 || percent === 30) {
     return (
       <>
@@ -87,4 +87,4 @@ const DisplayImages = (percent) => {
   }
 };
 
-export default DisplayImages;
+export default setDisplayImages;
