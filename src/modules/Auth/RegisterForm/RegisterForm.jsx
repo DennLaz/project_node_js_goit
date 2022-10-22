@@ -1,23 +1,24 @@
-import { useNavigate } from "react-router-dom";
+
 import PropTypes from "prop-types"
 
-import useForm from "../../shared/hooks/useForm"
-import TextField from "../../shared/components/TextField"
-import Button from "../../shared/components/Button/Button";
+import useForm from "../../../shared/hooks/useForm"
+import TextField from "../../../shared/components/TextField"
+import Button from "../../../shared/components/Button/Button";
 
 import fields from "./fields"
 import initialState from "./initialState"
 
 import style from "./registerForm.module.scss"
 
-const RegisterForm = ({ onSubmit }) => {
+const RegisterForm = ({ onSubmit, onClick }) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState });
 
     const { username, email, password } = state;
 
-    const navigate = useNavigate();
+    
     const handleClick = () => {
-        return navigate("/login");
+        onClick("login")
+        return
     }
 
     return (
@@ -35,10 +36,12 @@ const RegisterForm = ({ onSubmit }) => {
 
 RegisterForm.defaultProps = {
     onSubmit: () => { },
+    onClick:()=>{},
 }
 
 RegisterForm.propTypes = {
-    onSubmit: PropTypes.func.isRequired
+    onSubmit: PropTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired
 }
 
 export default RegisterForm;

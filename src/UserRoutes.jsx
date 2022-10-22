@@ -7,8 +7,6 @@ import PrivateRoute from "./shared/components/PrivateRoute";
 import PublicRoute from "./shared/components/PublicRoute";
 
 const AuthPage = lazy(() => import("./pages/AuthPage"));
-const RegisterPage = lazy(() => import("./pages/RegisterPage"));
-const LoginPage = lazy(() => import("./pages/LoginPage"));
 const TestPage = lazy(() => import("./pages/TestPage"));
 const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
@@ -20,10 +18,7 @@ const UserRoutes = () => {
       <Routes>
         
         <Route element={<PublicRoute />}>
-          <Route path="/" element={<AuthPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          
+          <Route path="/" element={<AuthPage />} />          
         </Route>
 
         <Route element={<PrivateRoute />}>

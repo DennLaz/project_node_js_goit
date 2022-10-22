@@ -1,9 +1,10 @@
-import styles from "./results.module.scss";
-import img from "../../assets/resultPage/catBad.gif";
-import img1 from "../../assets/resultPage/catMaybe.gif";
-import img2 from "../../assets/resultPage/catWithBall.gif";
-import img3 from "../../assets/resultPage/catGood.gif";
-import img4 from "../../assets/resultPage/catLoading.gif";
+import styles from "./result.module.scss";
+
+import img from "../../../assets/resultPage/catBad.gif";
+import img1 from "../../../assets/resultPage/catMaybe.gif";
+import img2 from "../../../assets/resultPage/catWithBall.gif";
+import img3 from "../../../assets/resultPage/catGood.gif";
+import img4 from "../../../assets/resultPage/catLoading.gif";
 
 const setDisplayImages = (percent) => {
   if (percent < 30 || percent === 30) {

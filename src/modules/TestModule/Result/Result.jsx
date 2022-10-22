@@ -1,14 +1,16 @@
+
 import React from "react";
-import { PieChart, Pie, Cell } from "recharts";
-import styles from "./results.module.scss";
-import setDisplayImages from "./setDisplayImages";
 import { useMediaPredicate } from "react-media-hook";
+import PropTypes from "prop-types";
+import { PieChart, Pie, Cell } from "recharts";
+
+import setDisplayImages from "./setDisplayImages";
+
+import styles from "./result.module.scss";
 
 
-
-const Results = ({ value }) => {
+const Result = ({ value, onClick }) => {
  const isMobile = useMediaPredicate("(max-width: 767px)");
-
 
   const percent = Number(value);
   const correctAnswers = Math.round((percent * 100) / 12);
@@ -72,12 +74,23 @@ const Results = ({ value }) => {
         </div>
         {setDisplayImages(correctAnswers)}
 
-        <button className={styles.btn}>Try again</button>
+        <button onClick={()=>onClick('ChoiceTest')} className={styles.btn}>Try again</button>
       </div>
     </div>
   );
 };
-export default Results;
+
+Result.defaultProps = {
+    onClick:()=>{},
+    value: 10,
+  };
+  
+  Result.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    value: PropTypes.number.isRequired,
+  };
+
+export default Result;
 
 
 // const smallerThan768 = useMediaPredicate("(max-width: 768px)");
