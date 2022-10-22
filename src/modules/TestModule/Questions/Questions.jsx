@@ -11,17 +11,6 @@ const Questions = ({arrOfQuestions, arrOfAnswers, onSelect, testName, onStopClic
 const [questionIndex, setQuestionIndex]= useState(0);
 
 
-console.log(`render`);
-
-const isComplate=()=>{
-  if(arrOfAnswers.current.every(el=>el.answer!=='')){
-    return false
-  }
-  return true
-}
-
-
-
 // On Answer Selecter
 const onSelectAnswer=(value)=>{
   onSelect(value); 
@@ -41,11 +30,21 @@ const onBackClick=()=>{
     return prev-=1
   })
 
-};
-const confirmTest=()=>{
+  };
+  
 
-  console.log("VSE");
-  console.log(arrOfAnswers.current);
+  const confirmTest = () => {
+    let idx = null;
+    if (arrOfAnswers.current.every((el, i) => {
+      idx=i
+      return el.answer !== ""
+    })) {
+    console.log("VSE");
+      console.log(arrOfAnswers.current);
+      return
+  }
+    setQuestionIndex(idx);
+  
 };
 // ******************
 
@@ -73,7 +72,7 @@ const confirmTest=()=>{
 
         <button disabled={questionIndex===0? true: false} type="button" onClick={onBackClick} >Back</button>
         {questionIndex<11 && <button   type="button" onClick={onNextClick} >Next</button>}
-        {questionIndex===11  && <button disabled={isComplate()}  type="button" onClick={confirmTest} >finish</button>}
+        {questionIndex===11  && <button  type="button" onClick={confirmTest} >finish</button>}
       </div>
     </>
   );

@@ -7,7 +7,7 @@ import Result from "./Result";
 import { quests } from "./testQW";
 
 const TestModule = () => {
-  const [step, setStep] = useState("Questions");
+  const [step, setStep] = useState("ChoiceTest");
   const [testName, setTestName] = useState("theory");
 
 
