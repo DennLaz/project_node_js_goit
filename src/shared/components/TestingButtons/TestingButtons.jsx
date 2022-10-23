@@ -6,7 +6,7 @@ import style from './testing-buttons.module.scss'
 
 const TestingButtons = (props) => {
   const isMobile = useMediaPredicate("(max-width: 767px)");
-  const { type, onClick, active } = props;
+  const { type, onClick } = props;
     
     return (
         <div className={style.wrapper}>
@@ -31,25 +31,11 @@ const TestingButtons = (props) => {
                     <use href={`${sprite}#icon-vector`}></use>
                 </svg>}
             </button>
-
-            {/* <button
-                // disabled={true}
-                className={`${setClass()}`}
-                onClick={onClick}
-                type="button"
-                >
-                {!isMobile && <span className={style.text}>Next question</span>}
-                
-                { <svg className={style.icon}>
-                    <use href={`${sprite}#icon-vector`}></use>
-                </svg>}
-            </button> */}
         </div>
   );
 };
 
 TestingButtons.defaultProps = {
-  active: false,
   type: "submit",
   onClick: () => {},
 };
