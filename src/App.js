@@ -13,7 +13,7 @@ import Loader from "./shared/components/Loader"
 
 import { getErrorLoadingAuth} from "./redux/auth/authSelectors";
 
-import 'react-notifications/lib/notifications.css';
+
 import "./index.scss";
 
 const  App=() =>{
