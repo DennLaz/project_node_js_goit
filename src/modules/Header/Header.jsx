@@ -41,7 +41,7 @@ const Header = () => {
     return (
         <header className={changeStyle}>
             
-            <div className={style.container}>
+            <div className={`container ${style.container_header}`}>
                 <div><Logo/></div>
                 
                 
