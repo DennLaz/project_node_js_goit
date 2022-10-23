@@ -7,7 +7,7 @@ export const userData = (store) => {
 };
 
 export const userName = (store) => {
-  return store.auth.user.userName;
+  return store.auth.user?.userName;
 };
 
 export const getErrorLoadingAuth = (store) => {

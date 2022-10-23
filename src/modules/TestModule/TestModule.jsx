@@ -1,22 +1,64 @@
-import { useState, useRef, useMemo, useCallback } from "react";
+import { useState, useRef,  useCallback, useEffect, } from "react";
 
 import ChoiceTest from "./ChoiceTest";
 import Questions from "./Questions";
 import Result from "./Result";
+import Loader from "../../shared/components/Loader"
 
-import { quests } from "./testQW";
+
+import {fetchQuestions, getResultTest} from "../../services/API/questions";
+
+
+// import { quests } from "./testQW";
 
 const TestModule = () => {
   const [step, setStep] = useState("ChoiceTest");
   const [testName, setTestName] = useState("theory");
+  const [loading, setLoading] = useState(false);
+  const [arrOfQuestions, setArrOfQuestions]=useState([]);
+  const [result, setResult] = useState(0);
+
+let arrOfAnswers= useRef([]);
 
 
 
-const memoizedValue = useMemo(() => quests.questions.map(el=>{
-    return {_id:el._id, answer:'' }
-  }), []);
+useEffect(()=>{
+  if(arrOfQuestions.length>0){
+    arrOfAnswers.current= arrOfQuestions.map(el=>{
+      return {_id:el._id, answer:'' }
+    })
+    setStep("Questions");
+  }
+},[arrOfQuestions])
 
-const arrOfAnswers= useRef(memoizedValue);
+
+
+
+const onFinishTest= async (value)=>{
+  try {
+    setTestName(testName);
+    setLoading(true);
+    const result = await getResultTest(value)
+    setResult(result.rightAnswers);
+    setStep("Result")
+    setLoading(false);
+  } catch (error) {
+    setLoading(false);
+      console.log(error);
+  }
+  
+ 
+
+}
+
+const onStopTest=()=>{
+  setTestName("");
+  setArrOfQuestions("");
+  arrOfAnswers.current=[];
+  setStep("ChoiceTest");
+}
+
+
 
 const setUserAnswerInArrOfAnswer=(value)=>{
     arrOfAnswers.current.forEach(el=>{   
@@ -27,36 +69,42 @@ const setUserAnswerInArrOfAnswer=(value)=>{
     })
 }
 
+ const choiceAndGetTest =useCallback( async (testName) => {
+    try {
+      setTestName(testName);
+      setLoading(true);
+      const result = await fetchQuestions(testName)
+      setArrOfQuestions(result);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+        console.log(error);
+    }
+    
+   
+   
 
-
-
-
-
-  const choiceTestName =useCallback((testName) => {
-    setTestName(testName);
-
-    console.log(testName);
   },[setTestName]);
 
-
-  const stopTest = useCallback(() => {
-    console.log("test must stop!");
-  },[]);
 
 
   return (
     <>
-      {step === "ChoiceTest" && <ChoiceTest onClick={choiceTestName} />}
+      {step === "ChoiceTest" && <ChoiceTest onClick={choiceAndGetTest} />}
       {step === "Questions" && (
         <Questions
+        onStopTest={onStopTest}
+        onFinishTest={onFinishTest}
         arrOfAnswers={arrOfAnswers}
-          onStopClick={stopTest}
-          arrOfQuestions={quests.questions}
+          onStopClick={onStopTest}
+          arrOfQuestions={arrOfQuestions}
           testName={testName}
           onSelect={setUserAnswerInArrOfAnswer}
         />
       )}
-      {step === "Result" && <Result value={11} onClick={setStep} />}
+      {step === "Result" && <Result value={result} onClick={setStep} />}
+      {loading && <Loader/>}
+      
     </>
   );
 };
