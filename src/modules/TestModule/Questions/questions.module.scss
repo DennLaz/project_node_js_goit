@@ -166,3 +166,33 @@
     height: 50px;
   }
 }
+
+.wrapper {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 704px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 107px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    width: 821px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+}
