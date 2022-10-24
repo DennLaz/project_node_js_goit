@@ -1,10 +1,16 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useMediaPredicate } from "react-media-hook";
 
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import Alert from "../../../shared/components/Alert";
+
+import PropTypes from "prop-types";
+
+import TestingButtons from "../../../shared/components/TestingButtons";
 import Question from "./Question";
 import Button from "../../../shared/components/Button";
 import style from "./questions.module.scss";
-
 
 const Questions = ({
   arrOfQuestions,
@@ -13,9 +19,45 @@ const Questions = ({
   testName,
   onStopClick,
   onFinishTest,
-  
 }) => {
+  const biggerThan768 = useMediaPredicate("(min-width: 768px)");
+  const mobileTablet = useMediaPredicate("(max-width: 1279px)");
+  const desc = useMediaPredicate("(min-width: 1280px)");
+
   const [questionIndex, setQuestionIndex] = useState(0);
+
+  ////////////////////////////////////////////////////////////////////////////////  
+  const [seconds, setSeconds] = useState(720);
+  const [timerActive, setTimerActive] = useState(true);
+
+  useEffect(() => {
+    if (seconds > 0 && timerActive) {
+      setTimeout(setSeconds, 1000, seconds - 1);
+    } else if (seconds === 0) {
+      onFinishTest(arrOfAnswers.current)
+    } else {
+      setTimerActive(false);
+    }
+  }, [seconds, timerActive]);
+
+
+  function addLeadingZero(value) {
+  return String(value).padStart(2, '0');
+}
+
+  const convertSeconds =(second) => {
+    let min =  Math.floor(second / 60);
+    let sec = Math.floor(second % 60)
+    return {min, sec};
+  }
+
+  const { min, sec } = convertSeconds(seconds);
+
+  let padMin = addLeadingZero(min)
+  let padSec = addLeadingZero(sec)
+
+
+  ////////////////////////////////////////////////////////////////////////////////
 
   // On Answer Selecter
   const onSelectAnswer = (value) => {
@@ -43,8 +85,7 @@ const Questions = ({
         return el.answer !== "";
       })
     ) {
-      
-      onFinishTest(arrOfAnswers.current)
+      onFinishTest(arrOfAnswers.current);
       return;
     }
     setQuestionIndex(idx);
@@ -52,13 +93,17 @@ const Questions = ({
   // ******************
   const elements = arrOfQuestions.map((_, idx) => {
     return (
-      <li style={ questionIndex===idx? {border: "2px solid black" }: {border: "2px solid transparent" }}
+      <li
+        style={
+          questionIndex === idx
+            ? { border: "2px solid #ff6b01" }
+            : { border: "2px solid transparent" }
+        }
         key={idx}
         onClick={() => setQuestionIndex(idx)}
         className={
           arrOfAnswers.current[idx].answer === "" ? style.item : style.complete
         }
-        
       >
         <p>{idx + 1}</p>
       </li>
@@ -69,8 +114,47 @@ const Questions = ({
     <>
       <div className="container">
         <div className={style.upper_wrap}>
-          {testName === "theory" && <p>[ Testing theory_ ]</p>}
-          {testName === "tech" && <p>[ Testing technical_ ]</p>}
+          {testName === "theory" && (
+            <p className={style.topic_text}>
+              <span>[ Testing</span> theory_ ]
+            </p>
+          )}
+          {testName === "tech" && (
+            <p className={style.topic_text}>
+              <span>[ Testing</span> technical_ ]
+            </p>
+          )}
+          <div className={style.time_wrap}>
+            { desc && <p className={style.time_text}>Time left:<span className={style.time}> {`${padMin}:${padSec}`}</span></p>}
+
+            <div>
+              { desc && <CircularProgressbar
+                className={style.circle}
+                value={seconds}
+                maxValue={720}
+                styles={buildStyles({
+                  textSize: "16px",
+                  textColor: "#f88",
+                  pathColor: `rgba(255, 107, 1, ${seconds / 100})`,
+                  backgroundColor: "green",
+                  pathTransitionDuration: 1,
+                })}
+              />}
+              {mobileTablet && <CircularProgressbar
+                className={style.circle}
+                value={seconds}
+                text={`${padMin}:${padSec}`}
+                maxValue={720}
+                styles={buildStyles({
+                  textSize: "16px",
+                  textColor: "#f88",
+                  pathColor: `rgba(255, 107, 1, ${seconds / 100})`,
+                  backgroundColor: "green",
+                  pathTransitionDuration: 1,
+                })}
+              />}
+            </div>
+            </div>
           <Button
             text="Stop test"
             type="button"
@@ -90,7 +174,7 @@ const Questions = ({
             onClick={onSelectAnswer}
           />
         </div>
-        <ul className={style.list}>{elements}</ul>
+        {biggerThan768 && <ul className={style.list}>{elements}</ul>}
         <button
           disabled={questionIndex === 0 ? true : false}
           type="button"
@@ -108,6 +192,9 @@ const Questions = ({
             finish
           </button>
         )}
+        {seconds === 720 && <Alert message="Your test has started we have 12 minutes to complete" type="success" />}
+        {seconds === 60 && <Alert message="You have 1 minute left before the end of the test, hurry up..." type="failure" />}
+
       </div>
     </>
   );
@@ -118,14 +205,13 @@ Questions.defaultProps = {
   onSelect: () => {},
   arrOfQuestions: [],
   arrOfAnswers: {},
-  onFinishTest: ()=>{},
+  onFinishTest: () => {},
 };
 
 Questions.propTypes = {
   onStopClick: PropTypes.func.isRequired,
   onSelect: PropTypes.func.isRequired,
   onFinishTest: PropTypes.func.isRequired,
- 
 
   testName: PropTypes.string.isRequired,
   arrOfQuestions: PropTypes.arrayOf(

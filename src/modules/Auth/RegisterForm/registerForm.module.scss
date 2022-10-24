@@ -16,3 +16,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.register_text {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  padding-bottom: 20px;
+}

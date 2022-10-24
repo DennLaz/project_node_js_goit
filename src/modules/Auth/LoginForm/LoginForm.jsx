@@ -21,7 +21,11 @@ const LoginForm = ({ onSubmit, onClick }) => {
     }
 
     return (
-        <form className="" onSubmit={handleSubmit} >
+        <>
+            <h2 className={style.login_text}>
+         Login to our app using e-mail and password:
+        </h2>
+            <form className="" onSubmit={handleSubmit} >
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input}/>
             <TextField onChange={handleChange} value={password} {...fields.password} className={style.last_input}/>
             <div className={style.wrap}>
@@ -29,6 +33,7 @@ const LoginForm = ({ onSubmit, onClick }) => {
                 <Button text="Sign up" type="button" onClick={handleClick}/>
             </div>
         </form>
+        </>
     )
 }
 

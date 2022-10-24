@@ -1,92 +1,168 @@
 .wrap {
-    margin: 0 auto;
-    padding: 40px 20px;
-    width: 280px;
-    background-color: var(--bcg-second);
-  
-    @media (min-width: 768px) {
-      padding: 40px 73px;
-      width: 704px;
-    }
-  
-    @media (min-width: 1280px) {
-      padding: 40px 91px;
-      width: 821px;
-    }
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 280px;
+  min-height: 500px;
+  background-color: var(--bcg-second);
+
+  @media (min-width: 768px) {
+    padding: 40px 73px;
+    width: 704px;
+    min-height: 560px;
   }
-  
-  .text {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-  
-    @media (min-width: 768px) {
-      font-size: 14px;
-      line-height: 1.21;
-      margin-bottom: 8px;
-    }
+
+  @media (min-width: 1280px) {
+    padding: 40px 91px;
+    width: 821px;
   }
-  
-  .active_text {
-    font-weight: 700;
-    color: var(--color-active-menu);
-  }
-  
-  .btn {
-    width: 130px;
-    height: auto;
-    padding: 17px 14px;
-    text-transform: none;
-    font-weight: 500;
+}
+
+.text {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @media (min-width: 768px) {
     font-size: 14px;
     line-height: 1.21;
-    margin-bottom: 18px;
-    border: none;
+    margin-bottom: 8px;
   }
-  
-  .upper_wrap {
-    display: flex;
+}
+
+.active_text {
+  font-weight: 700;
+  color: var(--color-active-menu);
+}
+
+.btn {
+  width: 100px;
+  height: auto;
+  padding: 17px 14px;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.21;
+  border: none;
+
+  @media (min-width: 768px) {
+    width: 181px;
+    font-size: 14px;
+    line-height: 1.21;
   }
-  .list{
-    display: flex;
-    margin: 10px auto;
+}
+
+.upper_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 18px;
+  max-width: 821px;
+
+  @media (min-width: 768px) {
+    padding-top: 42px;
+    padding-bottom: 30px;
+  }
+
+  @media (min-width: 1280px) {
     justify-content: center;
-    gap: 20px;
-    
+    gap: 170px;
+    margin: 0 auto;
+    max-width: 821px;
   }
-  .item{
-    background-color: rgba(147, 141, 141, 0.634);
-    
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover{
-      background-color: rgba(255, 107, 1, 0.5);
-    }
-    
+}
+
+.topic_text {
+  display: grid;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  @media (min-width: 768px) {
+    width: 145px;
+    font-size: 22px;
+    line-height: 1.22;
+    letter-spacing: 0.02em;
   }
-  .complete{
-    background-color: var(--color-active-menu);
-    cursor: pointer;
-    border-radius: 5px;
-    color: white;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    &:hover{
-      background-color: rgba(255, 107, 1, 0.5);
-    }
-   
+}
+
+.list {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  background-color: rgba(147, 141, 141, 0.634);
+
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: rgba(255, 107, 1, 0.5);
   }
+}
+.complete {
+  background-color: var(--color-active-menu);
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgba(255, 107, 1, 0.5);
+  }
+}
+
+.time_wrap {
+  display: flex;
+  width: 95px;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 1280px) {
+    width: 196px;
+  }
+}
+
+.time_text {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.time {
+  width: 80px;
+  color: var(--color-active-menu);
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+
+  @media (min-width: 768px) {
+    width: 70px;
+    height: 70px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 50px;
+    height: 50px;
+  }
+}
