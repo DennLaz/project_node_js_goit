@@ -13,11 +13,11 @@ function Logo() {
     return (
         <>
             { <Link to="/">
-                <div className={style.logo_ontainer}>
+                {/* <div className={style.logo_container}> */}
                     <svg className={style.icon}>
                         <use href={`${sprite}#icon-logo`}></use>
                     </svg>
-                </div>
+                {/* </div> */}
             </Link>}
         </>
     )

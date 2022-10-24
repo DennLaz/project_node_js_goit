@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
+import TestingButtons from "../../../shared/components/TestingButtons";
 import Question from "./Question";
 import Button from "../../../shared/components/Button";
 import style from "./questions.module.scss";
@@ -91,23 +92,28 @@ const Questions = ({
           />
         </div>
         <ul className={style.list}>{elements}</ul>
-        <button
+        <div className={style.wrapper}>
+        <TestingButtons
           disabled={questionIndex === 0 ? true : false}
           type="button"
+          text="Previous question"
           onClick={onBackClick}
+          active={true}
         >
           Back
-        </button>
+        </TestingButtons>
         {questionIndex < 11 && (
-          <button type="button" onClick={onNextClick}>
-            Next
-          </button>
-        )}
+          <TestingButtons text="Next question" type="button" onClick={onNextClick}>
+            
+          </TestingButtons>
+          )}
+          
         {questionIndex === 11 && (
-          <button type="button" onClick={confirmTest}>
-            finish
-          </button>
-        )}
+          <TestingButtons text="Finish test" type="button" onClick={confirmTest}>
+            </TestingButtons>
+            
+          )}
+          </div>
       </div>
     </>
   );
