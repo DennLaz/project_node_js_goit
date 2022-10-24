@@ -53,6 +53,14 @@
     font-size: 14px;
     line-height: 1.21;
   }
+
+  transition: 700ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+  }
 }
 
 .upper_wrap {
@@ -174,6 +182,7 @@
   justify-content: space-between;
   margin: 0 auto;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -184,6 +193,7 @@
     justify-content: space-between;
     margin: 0 auto;
     padding-bottom: 107px;
+    padding-top: 10px;
   }
 }
 
