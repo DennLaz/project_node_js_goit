@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useMediaPredicate } from "react-media-hook";
 
 import { userName } from '../../../redux/auth/authSelectors';
 import { userLogout } from "../../../redux/auth/authOperations";
@@ -8,6 +9,7 @@ import useAuth from "../../../shared/hooks/useAuth";
 import style from "./user-info.module.scss";
 
 function UserInfo() {
+    const isMobile = useMediaPredicate("(max-width: 767px)");
     const isLogin = useAuth();
 
     const name = useSelector(userName);
@@ -19,8 +21,10 @@ function UserInfo() {
             { isLogin && (<div className={style.wrapper} >
                 <p className={style.new_name} >{newName}</p><span className={style.name}>{name}</span>
                 
-                <div className={style.line}></div>
+               
             </div>)}
+            {isLogin && <div className={style.line}></div>}
+            {isMobile && !isLogin && <div className={style.mobile_line}></div>}
         </>
     )
 }

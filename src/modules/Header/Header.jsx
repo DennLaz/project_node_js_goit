@@ -24,7 +24,7 @@ const Header = () => {
     const isLogin = useAuth();
     const dispatch = useDispatch();
     
-  const changeStyle = isLogin ? style.header  : style.isActive;
+  const changeStyle = isLogin ? style.header : style.isActive;
 
     
     function onLogout() {
@@ -53,8 +53,6 @@ const Header = () => {
                                 <use  href={`${sprite}#icon-sign-out`}></use>
                             </svg>
                     }
-                   
-                
                     <UserMenu onClick={onMenuClick} isOpen={isOpen} />
                     <MobileMenu onClick={onMenuClick} isOpen={isOpen} />
                     </div>
