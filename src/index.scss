@@ -1,27 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700;800&display=swap");
 
-// html {
-//   height: 100%;
-// }
-// body {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-// }
 
-// header {
-//   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-//   flex: 0 0 auto;
-// }
-// main {
-//   /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
-//   flex: 1 0 auto;
-// }
-// footer {
-//   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-//   flex: 0 0 auto;
-// }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    /* Чтобы занимал оставшееся пространство */
+    flex-grow: 1;
+  }
+  
+  footer {
+    /* Чтобы footer не уменьшался */
+    flex-shrink: 0;
+  }
 :root {
   --bcg-primary: #f5f6fb;
   --bcg-second: #ffffff;
@@ -48,11 +48,7 @@
   --color-border-vector:1px solid #00122F;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+
 
 body {
   color: var(--text-primary);

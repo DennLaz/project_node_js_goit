@@ -1,9 +1,116 @@
-.icon {
-    display: inline-block;
-    width: 129px;
-    height: 28px;
-    stroke-width: 0;
-    stroke: var(--bcg-btn-active)r;
-    fill: var(--bcg-btn-active);
-    mask-image: var(--bcg-btn-active);
+.overlay {
+    position: fixed;
+    top: 68px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    z-index: 1;
+    // opacity: 1;
+    // transition: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+    // transition: 700ms ease-in;
+
+
+    
+}
+
+// .open {
+//     composes: overlay;
+//     // opacity: 0;
+//     // transition: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+//     transition: 700ms ease-in;
+// top: 100%;
+//     // right: 100%;
+//     // left: 100%;
+
+// }
+
+@media screen and (min-width: 768px) {
+    .overlay {
+        display: none;
+    }
+}
+
+.mobile_container {
+    position: relative;
+    top: 1px;
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F6FB;
+    // background-color: transparent;
+    z-index: 1;
+
+}
+
+@media screen and (min-width: 768px) {
+    .mobile_container {
+        display: none;
+    }
+}
+
+.mobile_menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        opacity: 1;
+            transition: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+    .mobile_menu {
+        display: none;
+    }
+}
+
+.item {
+    
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.link {
+    font-size: 14px;
+    line-height: 0.86;
+    color: var(--color-text);
+    transition: 1000ms;
+    padding: 26px 50px;
+    // padding: 50px 30px;
+}
+
+.isActive {
+    padding: 26px 100px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.isActive::after {
+    content: "";
+    display: block;
+    bottom: -3px;
+    left: 0;
+    height: 1px;
+    background-color: var(--bcg-btn-active);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_logout {
+    width: 16px;
+    height: 16px;
+    margin-top: 28px;
+    z-index: 999;
 }

@@ -17,6 +17,9 @@ const authSlice = createSlice({
     [createNewUser.fulfilled]: (store, { payload }) => ({
       ...store,
       loading: false,
+      user:{
+        userName: "ok",
+      }
       // user: {
       //   userName: payload.username,
       // },
@@ -51,3 +54,6 @@ const authSlice = createSlice({
 });
 
 export default authSlice.reducer;
+
+
+

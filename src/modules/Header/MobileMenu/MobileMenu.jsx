@@ -1,18 +1,80 @@
-import React from "react";
+import { createPortal } from "react-dom";
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 
-import style from "./mobile-menu.module.scss";
+import { userLogout } from "../../../redux/auth/authOperations";
+
+import useAuth from "../../../shared/hooks/useAuth";
+
+import { items } from "../items";
+
 import sprite from "../../../assets/svg/sprite.svg"
+import style from "./mobile-menu.module.scss";
 
-const MobileMenu = () => {
 
-  return (
-    <footer className={style.footer}>
+const modalRoot = document.getElementById("modal");
 
-          <svg className={style.icon}>
-            <use href={`${sprite}#icon-logo`}></use>
-          </svg>
+function changeClassNameMobileMenu({ isActive }) {
+  const changeStyle = isActive ? style.isActive : style.link;
+  return changeStyle;
+}
+
+const MobileMenu = ({ onClick, isOpen }) => {
+
+    const isLogin = useAuth();
+
+    const dispatch = useDispatch();
+    
+    function onLogout() {
+        dispatch(userLogout());
+    }
+
+    const changeStyle = isOpen ? style.open  : style.overlay;
+    
+    const privateItems = items.filter(item => item.private === false);
+    const publicItems = items.filter(item => item.private === false || item.private !== false);
+  
+    const elements = privateItems.map(({ id, link, title }) =>
+        <li key={id} className={style.item}>
+            <NavLink className={changeClassNameMobileMenu} onClick={onClick} to={link}>
+                {title}
+            </NavLink>
+        </li>
+    );
+    const publicElements = publicItems.map(({ id, link, title }) =>
+        <li key={id} className={style.item}>
+            <NavLink className={changeClassNameMobileMenu} onClick={onClick} to={link}>
+                {title}
+            </NavLink>
+        </li>
+    );
+
+    return (
+        createPortal(
+            (
+            <>
+                {isOpen && <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {elements}
+                        </ul>
+                    </div>
+                    </div>}
+                {isOpen && isLogin && <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {publicElements}
+                        </ul>
+                            <div onClick={onLogout} className={style.wrapper}>
+                                <svg onClick={onClick} className={style.icon_logout}>
+                                    <use href={`${sprite}#icon-sign-out`}></use>
+                                </svg>
+                            </div>
+                    </div>
+                </div>}
+            </>
+      ), modalRoot)
        
-    </footer>
   );
 };
 

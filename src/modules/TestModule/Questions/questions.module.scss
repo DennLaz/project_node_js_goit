@@ -1,0 +1,123 @@
+.wrap {
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 280px;
+    background-color: var(--bcg-second);
+  
+    @media (min-width: 768px) {
+      padding: 40px 73px;
+      width: 704px;
+    }
+  
+    @media (min-width: 1280px) {
+      padding: 40px 91px;
+      width: 821px;
+    }
+  }
+  
+  .text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  
+    @media (min-width: 768px) {
+      font-size: 14px;
+      line-height: 1.21;
+      margin-bottom: 8px;
+    }
+  }
+  
+  .active_text {
+    font-weight: 700;
+    color: var(--color-active-menu);
+  }
+  
+  .btn {
+    width: 130px;
+    height: auto;
+    padding: 17px 14px;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.21;
+    margin-bottom: 18px;
+    border: none;
+  }
+  
+  .upper_wrap {
+    display: flex;
+  }
+  .list{
+    display: flex;
+    margin: 10px auto;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+  .item{
+    background-color: rgba(147, 141, 141, 0.634);
+    
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+      background-color: rgba(255, 107, 1, 0.5);
+    }
+    
+  }
+  .complete{
+    background-color: var(--color-active-menu);
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover{
+      background-color: rgba(255, 107, 1, 0.5);
+    }
+   
+  }
+
+
+.wrapper {
+    width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 704px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding-bottom: 107px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .wrapper {
+        width: 821px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+}
