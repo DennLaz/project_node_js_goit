@@ -54,7 +54,11 @@ const setDisplayImages = (percent) => {
         </p>
       </>
     );
-  } else if (percent === 90 || (percent > 90 && percent < 100)) {
+  } else if (
+    percent === 90 ||
+    (percent > 90 && percent < 100) ||
+    percent === 100
+  ) {
     return (
       <>
         <div className={styles.picture}>
