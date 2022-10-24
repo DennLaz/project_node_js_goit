@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  margin-top: 120px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
   @media (min-width: 768px) {
@@ -14,6 +14,7 @@
   font-size: 30px;
   letter-spacing: 0.02em;
   text-align: center;
+  user-select:none;
   @media (min-width: 768px) {
     font-size: 60px;
   }
@@ -36,7 +37,7 @@
 
 
 .cat{
-  width: 180px;
+  width: 160px;
   @media (min-width: 768px) {
     width: 450px;
   }
@@ -45,7 +46,7 @@
   }
 }
 
-button {
+.btmHome {
   width: 110px;
   display: inline-block;
   padding: 10px 8px;
@@ -74,7 +75,7 @@ button {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-button:hover {
+.btmHome:hover {
   box-shadow: 0 0 10px 0 #dadcaa inset, 0 0 10px 4px #dadcaa;
 }
 
@@ -83,14 +84,16 @@ button:hover {
   justify-content: center; 
   align-items: center; 
   text-align:center; 
+  margin-bottom: 40px;
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
 
-h2 {
-  font-size:5em;
-  user-select:none;
-}
 
-h2 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+
+// h2 span 
+.text{ display:inline-block; animation:float .2s ease-in-out infinite; }
 @keyframes float {
   0%,100%{ transform:none; }
   33%{ transform:translateY(-1px) rotate(-2deg); }
@@ -103,33 +106,33 @@ h2 span { display:inline-block; animation:float .2s ease-in-out infinite; }
   50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
 }
 
-span:nth-child(4n) { 
+.text:nth-child(4n) { 
   color:hsl(50, 75%, 55%); 
   text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); 
 }
-span:nth-child(4n-1) { 
+.text:nth-child(4n-1) { 
   color:hsl(135, 35%, 55%); 
   text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); 
 }
-span:nth-child(4n-2) { 
+.text:nth-child(4n-2) { 
   color:hsl(155, 35%, 60%); 
   text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); 
 }
-span:nth-child(4n-3) { 
+.text:nth-child(4n-3) { 
   color:hsl(30, 65%, 60%); 
   text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); 
 }
 
-h2 span:nth-child(2){ animation-delay:.05s; }
-h2 span:nth-child(3){ animation-delay:.1s; }
-h2 span:nth-child(4){ animation-delay:.15s; }
-h2 span:nth-child(5){ animation-delay:.2s; }
-h2 span:nth-child(6){ animation-delay:.25s; }
-h2 span:nth-child(7){ animation-delay:.3s; }
-h2 span:nth-child(8){ animation-delay:.35s; }
-h2 span:nth-child(9){ animation-delay:.4s; }
-h2 span:nth-child(10){ animation-delay:.45s; }
-h2 span:nth-child(11){ animation-delay:.5s; }
-h2 span:nth-child(12){ animation-delay:.55s; }
-h2 span:nth-child(13){ animation-delay:.6s; }
-h2 span:nth-child(14){ animation-delay:.65s; }
+.text:nth-child(2){ animation-delay:.05s; }
+.text:nth-child(3){ animation-delay:.1s; }
+.text:nth-child(4){ animation-delay:.15s; }
+.text:nth-child(5){ animation-delay:.2s; }
+.text:nth-child(6){ animation-delay:.25s; }
+.text:nth-child(7){ animation-delay:.3s; }
+.text:nth-child(8){ animation-delay:.35s; }
+.text:nth-child(9){ animation-delay:.4s; }
+.text:nth-child(10){ animation-delay:.45s; }
+.text:nth-child(11){ animation-delay:.5s; }
+.text:nth-child(12){ animation-delay:.55s; }
+.text:nth-child(13){ animation-delay:.6s; }
+.text:nth-child(14){ animation-delay:.65s; }

@@ -9,25 +9,25 @@ const NotFoundPage = () => {
             <div className={style.wrapper}>
                 <div className={style.title_text}>
                     <h2 className={style.title}>
-                        <span>4</span>
-                        <span>0</span>
-                        <span>4</span>
+                        <span className={style.text}>4</span>
+                        <span className={style.text}>0</span>
+                        <span className={style.text}>4</span>
                     </h2>
                     <h2 className={style.title}>
-                        <span>N</span>
-                        <span>o</span>
-                        <span>t&ensp;</span>
-                        <span> f</span>
-                        <span>o</span>
-                        <span>u</span>
-                        <span>n</span>
-                        <span>d</span>
+                        <span className={style.text}>N</span>
+                        <span className={style.text}>o</span>
+                        <span className={style.text}>t&ensp;</span>
+                        <span className={style.text}> f</span>
+                        <span className={style.text}>o</span>
+                        <span className={style.text}>u</span>
+                        <span className={style.text}>n</span>
+                        <span className={style.text}>d</span>
                     </h2>               
                 </div>
                 <div className={style.item}>
                     <img className={style.cat} src={catPageNotFound} alt="cat"/>
                     <Link to="/" className={style.link}>
-                        <button  className={style.home}>
+                        <button  className={style.btmHome}>
                             go home
                         </button>
                     </Link>
