@@ -30,6 +30,8 @@ const Questions = ({
   const [seconds, setSeconds] = useState(720);
   const [timerActive, setTimerActive] = useState(true);
 
+
+
   useEffect(() => {
     if (seconds > 0 && timerActive) {
       setTimeout(setSeconds, 1000, seconds - 1);
@@ -55,6 +57,7 @@ const Questions = ({
 
   let padMin = addLeadingZero(min)
   let padSec = addLeadingZero(sec)
+  let percentage = Math.floor(seconds * 100 / 720)
 
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -128,9 +131,10 @@ const Questions = ({
             { desc && <p className={style.time_text}>Time left:<span className={style.time}> {`${padMin}:${padSec}`}</span></p>}
 
             <div>
-              { desc && <CircularProgressbar
+              {desc && <CircularProgressbar
                 className={style.circle}
                 value={seconds}
+                text={`${percentage}%`}
                 maxValue={720}
                 styles={buildStyles({
                   textSize: "16px",
