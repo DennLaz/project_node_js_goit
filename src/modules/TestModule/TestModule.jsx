@@ -9,8 +9,6 @@ import Loader from "../../shared/components/Loader"
 import {fetchQuestions, getResultTest} from "../../services/API/questions";
 
 
-// import { quests } from "./testQW";
-
 const TestModule = () => {
   const [step, setStep] = useState("ChoiceTest");
   const [testName, setTestName] = useState("theory");

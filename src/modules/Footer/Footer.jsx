@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div className={style.text_link}>
           <NavLink className={style.text_link_item}
-            to={"/"}
+            to={"/contacts"}
             >
               by GoIT Students
           </NavLink>

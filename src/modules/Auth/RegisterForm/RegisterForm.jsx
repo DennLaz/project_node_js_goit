@@ -22,6 +22,10 @@ const RegisterForm = ({ onSubmit, onClick }) => {
     }
 
     return (
+        <>
+        <p className={style.register_text}>
+          Register or login to our app using e-mail and password:
+        </p>
         <form className="" onSubmit={handleSubmit}>
             <TextField onChange={handleChange} value={username} {...fields.name} className={style.input} />
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input} />
@@ -31,6 +35,7 @@ const RegisterForm = ({ onSubmit, onClick }) => {
                 <Button text="Sign up" type="submite" active="true" />
             </div>
         </form>
+        </>
     )
 }
 

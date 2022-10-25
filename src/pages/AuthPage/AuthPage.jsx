@@ -10,7 +10,6 @@ const AuthPage = () => {
   
   return<>
  <Auth/>
-  {/* {error && <p>{error.message}</p>}  */}
   {error && errorChecker(error)} 
   </> 
 };
