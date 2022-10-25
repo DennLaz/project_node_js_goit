@@ -1,4 +1,5 @@
 import { useMediaPredicate } from "react-media-hook";
+
 import PropTypes from "prop-types";
 
 import sprite from "../../../assets/svg/sprite.svg"
@@ -34,8 +35,8 @@ const TestingButtons = (props) => {
             className={style.img}
             loading="lazy"
             src={img}
-            alt="cat thinks"
-          />}
+            alt="Finish test"
+            />}
             {active && !isMobile && <span className={style.text}>{text}</span> }
           </button>
 );

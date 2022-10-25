@@ -5,10 +5,9 @@
 }
 
 .name {
-    // margin-left: 20px;
     font-weight: 500;
-        font-size: 12px;
-        line-height: 16px;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 .new_name {
@@ -30,16 +29,14 @@
     }
 }
 
-// @media screen and (max-width: 767px) {
-    .line {
-        display: block;
-        width: 1px;
-        height: 68px;
-        margin-left: 20px;
-        margin-right: 20px;
-        background-color: var(--color-border);
-    }
-// }
+.line {
+    display: block;
+    width: 1px;
+    height: 68px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: var(--color-border);
+}
 
 .mobile_line {
     display: block;
@@ -49,19 +46,3 @@
     margin-right: 20px;
     background-color: var(--color-border);
 }
-
-// .line {
-//     font-size: 14px;
-//     line-height: 16px;
-// }
-
-
-// .line::after {
-//     content: "";
-//     display: block;
-//     // bottom: -3px;
-//     // left: 0;
-//     // width: 100%;
-//     height: 3px;
-//     background-color: var(--bcg-btn-active);
-// }

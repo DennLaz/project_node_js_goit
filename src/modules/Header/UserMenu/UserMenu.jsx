@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 import sprite from "../../../assets/svg/sprite.svg"
-
 import style from "./user-menu.module.scss";
 
 function UserMenu({onClick, isOpen}) {

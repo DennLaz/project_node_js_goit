@@ -54,10 +54,10 @@
     .btn_active {
         display: flex;
         align-items: center;
-        // justify-content: space-between;
         width: 210px;
         height: 34px;
         padding: 5px 20px;
+
         border: none;
         color: var(--bcg-btn-light);
         fill: var(--bcg-btn-light);
@@ -80,13 +80,11 @@
 .icon_reverse {
     width: 24px;
     height: 24px;
-    // margin-right: auto;
     margin-right: 12px;
     transform: rotate(180deg);
 }
 
 .icon {
-    // margin-left: 52px;
     width: 24px;
     height: 24px;
 }
@@ -95,7 +93,7 @@
     .icon_reverse {
         width: 24px;
         height: 24px;
-        // margin-right: auto;
+        
         transform: rotate(180deg);
     }
 

@@ -2,6 +2,8 @@ import { createPortal } from "react-dom";
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 
+import PropTypes from 'prop-types';
+
 import { userLogout } from "../../../redux/auth/authOperations";
 
 import useAuth from "../../../shared/hooks/useAuth";
@@ -10,7 +12,6 @@ import { items } from "../items";
 
 import sprite from "../../../assets/svg/sprite.svg"
 import style from "./mobile-menu.module.scss";
-
 
 const modalRoot = document.getElementById("modal");
 
@@ -94,3 +95,12 @@ const MobileMenu = ({ onClick, isOpen }) => {
 };
 
 export default MobileMenu;
+
+MobileMenu.defaultProps = {
+    onClick: () => {},
+}
+
+MobileMenu.propTypes = { 
+    onClick: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+}
