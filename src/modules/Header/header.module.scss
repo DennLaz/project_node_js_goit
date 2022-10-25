@@ -116,6 +116,16 @@
     height: 16px;
     // margin-left: 20px;
     // z-index: 999;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.icon_logout:hover,
+.icon_logout:focus {
+    font-weight: 900;
+    transform: scale(1.05);
+    transition: 500ms ease-in-out;
+    fill: red;
 }
 
 @media screen and (max-width: 767px) {

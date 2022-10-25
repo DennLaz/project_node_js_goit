@@ -1,5 +1,9 @@
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
+
 import { useMediaPredicate } from "react-media-hook";
+
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 import { userName } from '../../../redux/auth/authSelectors';
 
@@ -17,11 +21,16 @@ function UserInfo() {
 
     return (
         <>
-            { isLogin && (<div className={style.wrapper} >
-                <p className={style.new_name} >{newName}</p><span className={style.name}>{name}</span>
-                
-               
-            </div>)}
+            {
+            isLogin && (
+                    <div className={style.wrapper} >
+                        <Tippy delay={200} content={name}>
+                            <p className={style.new_name} >{newName}</p>
+                        </Tippy>
+                        <span className={style.name}>{name}</span>
+                    </div>
+                )
+            }
             {isLogin && <div className={style.line}></div>}
             {isMobile && !isLogin && <div className={style.mobile_line}></div>}
         </>

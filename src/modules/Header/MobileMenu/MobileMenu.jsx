@@ -51,14 +51,31 @@ const MobileMenu = ({ onClick, isOpen }) => {
         createPortal(
             (
             <>
-                {isOpen && <div className={style.overlay} >
+                {isOpen ? <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {elements}
+                        </ul>
+                    </div>
+                    </div> : <div className={style.open} >
                      <div className={style.mobile_container} >
                         <ul className={style.mobile_menu} >
                             {elements}
                         </ul>
                     </div>
                     </div>}
-                {isOpen && isLogin && <div className={style.overlay} >
+                { isOpen && isLogin ? <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {publicElements}
+                        </ul>
+                            <div onClick={onLogout} className={style.wrapper}>
+                                <svg onClick={onClick} className={style.icon_logout}>
+                                    <use href={`${sprite}#icon-sign-out`}></use>
+                                </svg>
+                            </div>
+                    </div>
+                </div> : <div className={style.open} >
                      <div className={style.mobile_container} >
                         <ul className={style.mobile_menu} >
                             {publicElements}
