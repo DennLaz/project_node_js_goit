@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 import PropTypes from "prop-types";
 
 import useForm from "../../../shared/hooks/useForm";
@@ -13,7 +13,7 @@ import googleImg from "../../../assets/google.png"
 import style from "./loginForm.module.scss"
 
 
-const LoginForm = ({ onSubmit, onClick, onGoogleClick }) => {
+const LoginForm = ({ onSubmit, onClick}) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState })
     
     const { email, password } = state;
@@ -23,13 +23,16 @@ const LoginForm = ({ onSubmit, onClick, onGoogleClick }) => {
         return
     }
 
+    const path = "//node-project-pro-test.herokuapp.com/api/users/google"
+
     return (
         <>
             <div className={style.google_wrap}>
                 <p className={style.google_text}>You can use your Google Account to authorize:</p>
-                <button onClick={onGoogleClick} className={style.google_btn}>
+                <Link to={{ pathname: `${path}`}} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18"/></Link>
+                {/* <a href="https://node-project-pro-test.herokuapp.com/api/users/google" rel="noreferrer noopener" className={style.google_btn}>
                     <img alt="google icon" src={googleImg} width="84" height="18"/>
-                </button>
+                </a> */}
             </div>
         <p className={style.login_text}>
          Login to our app using e-mail and password:
@@ -49,13 +52,13 @@ const LoginForm = ({ onSubmit, onClick, onGoogleClick }) => {
 LoginForm.defaultProps = {
     onSubmit: ()=> {},
     onClick:()=>{},
-    onGoogleClick:()=>{},
+
 }
 
 LoginForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
-    onGoogleClick: PropTypes.func.isRequired,
+
 }
 
 export default LoginForm;

@@ -4,7 +4,6 @@ import {
   loginOldUser,
   getUser,
   userLogout,
-  googleAuth
 } from "./authOperations";
 import { pending, rejected } from "../../shared/utils/pendingAndRejected";
 import initialState from "./authInitialState";
@@ -18,9 +17,9 @@ const authSlice = createSlice({
     [createNewUser.fulfilled]: (store, { payload }) => ({
       ...store,
       loading: false,
-      user:{
+      user: {
         userName: "ok",
-      }
+      },
       // user: {
       //   userName: payload.username,
       // },
@@ -51,22 +50,16 @@ const authSlice = createSlice({
       isLogin: true,
       user: { userId: payload._id, userName: payload.username },
     }),
-    [googleAuth.pending]: pending,
-    [googleAuth.rejected]: rejected,
-    [googleAuth.fulfilled]: (store, { payload }) => ({
-      ...store,
-      loading: false,
-      token: payload.token,
-      isLogin: true,
-      user: {
-        userId: payload.user._id,
-        userName: payload.user.username,
-      },
-    }),
+  },
+  reducers: {
+    setTokenToRedux: (store, { payload }) => {
+      return {
+        ...store,
+        token: payload,
+      };
+    },
   },
 });
 
+export const { setTokenToRedux } = authSlice.actions;
 export default authSlice.reducer;
-
-
-
