@@ -38,3 +38,9 @@ export const getCurrentUser = async (token) => {
     throw error;
   }
 };
+
+export const googleAPI = async () => {
+  const { data } = await instance.get("/users/google");
+  setToken(data.token);
+  return data;
+};

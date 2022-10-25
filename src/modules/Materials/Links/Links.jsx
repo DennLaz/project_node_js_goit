@@ -11,7 +11,7 @@ const Links = () => {
       <ol type="1" className={style.list}>
         {ArrayLinks.map(({ name, link }) => (
             <li key={link}>
-          <Link to={{ pathname: `${link}`}} className={style.link}target="_blank">{name}</Link>
+          <Link to={{ pathname: `${link}`}} className={style.link}target="_blank" rel="noreferrer noopener" >{name}</Link>
         </li>
         ))}
       </ol>

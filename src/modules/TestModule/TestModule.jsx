@@ -9,8 +9,6 @@ import Loader from "../../shared/components/Loader"
 import {fetchQuestions, getResultTest} from "../../services/API/questions";
 
 
-// import { quests } from "./testQW";
-
 const TestModule = () => {
   const [step, setStep] = useState("ChoiceTest");
   const [testName, setTestName] = useState("theory");
@@ -34,7 +32,7 @@ useEffect(()=>{
 
 
 
-const onFinishTest= async (value)=>{
+const onFinishTest = useCallback(async (value)=>{
   try {
     setTestName(testName);
     setLoading(true);
@@ -49,7 +47,7 @@ const onFinishTest= async (value)=>{
   
  
 
-}
+},[testName])
 
 const onStopTest=()=>{
   setTestName("");

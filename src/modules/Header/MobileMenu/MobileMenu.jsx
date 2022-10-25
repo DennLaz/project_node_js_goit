@@ -28,8 +28,6 @@ const MobileMenu = ({ onClick, isOpen }) => {
     function onLogout() {
         dispatch(userLogout());
     }
-
-    const changeStyle = isOpen ? style.open : style.overlay;
     
     const privateItems = items.filter(item => item.private === false);
     const publicItems = items.filter(item => item.private === false || item.private !== false);

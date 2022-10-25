@@ -4,6 +4,7 @@ import {
   loginOldUser,
   getUser,
   userLogout,
+  googleAuth
 } from "./authOperations";
 import { pending, rejected } from "../../shared/utils/pendingAndRejected";
 import initialState from "./authInitialState";
@@ -49,6 +50,18 @@ const authSlice = createSlice({
       loading: false,
       isLogin: true,
       user: { userId: payload._id, userName: payload.username },
+    }),
+    [googleAuth.pending]: pending,
+    [googleAuth.rejected]: rejected,
+    [googleAuth.fulfilled]: (store, { payload }) => ({
+      ...store,
+      loading: false,
+      token: payload.token,
+      isLogin: true,
+      user: {
+        userId: payload.user._id,
+        userName: payload.user.username,
+      },
     }),
   },
 });
