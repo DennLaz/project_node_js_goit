@@ -2,37 +2,43 @@ import { useMediaPredicate } from "react-media-hook";
 import PropTypes from "prop-types";
 
 import sprite from "../../../assets/svg/sprite.svg"
+import img from "../../../assets/finish.gif"
 import style from './testing-buttons.module.scss'
 
 const TestingButtons = (props) => {
   const isMobile = useMediaPredicate("(max-width: 767px)");
-  const { type, onClick } = props;
+
+  const { type, onClick, active, text, disabled } = props;
+
+  const setClass = () => {
+  return active? style.btn_active : style.btn;
+  }
     
-    return (
-        <div className={style.wrapper}>
-            <button
-                className={style.btn_active}
-                onClick={onClick}
-                type={type}
-                >
-                { <svg className={style.icon_reverse}>
-                    <use href={`${sprite}#icon-vector`}></use>
-                </svg>}
-                {!isMobile && <span className={style.text}>Previous question</span>}
-            </button>
-            
-            <button
-                className={style.btn}
-                onClick={onClick}
-                type={type}
-                >
-                {!isMobile && <span className={style.text}>Next question</span>}
-                { <svg className={style.icon}>
-                    <use href={`${sprite}#icon-vector`}></use>
-                </svg>}
-            </button>
-        </div>
-  );
+  const setSvgClass = () => {
+    return active? style.icon_reverse  : style.icon;
+  }
+  
+  return (
+          <button
+            className={`${setClass()}`}
+            onClick={onClick}
+            type={type}
+            disabled={disabled}
+            >
+            {!active && !isMobile && <span className={style.text}>{text}</span> }
+            {text !== "Finish test" && <svg className={`${setSvgClass()}`}>
+                <use href={`${sprite}#icon-vector`}></use>
+            </svg>}
+
+            {text === "Finish test" && <img
+            className={style.img}
+            loading="lazy"
+            src={img}
+            alt="cat thinks"
+          />}
+            {active && !isMobile && <span className={style.text}>{text}</span> }
+          </button>
+);
 };
 
 TestingButtons.defaultProps = {
@@ -42,6 +48,7 @@ TestingButtons.defaultProps = {
 
 TestingButtons.propTypes = {
   type: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

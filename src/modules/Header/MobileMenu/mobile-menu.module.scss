@@ -68,7 +68,7 @@
 }
 
 .item {
-    padding: 26px 0;
+    
     display: flex;
     width: 100%;
     align-items: center;
@@ -83,9 +83,12 @@
     line-height: 0.86;
     color: var(--color-text);
     transition: 1000ms;
+    padding: 26px 50px;
+    // padding: 50px 30px;
 }
 
 .isActive {
+    padding: 26px 100px;
     font-size: 14px;
     line-height: 16px;
 }

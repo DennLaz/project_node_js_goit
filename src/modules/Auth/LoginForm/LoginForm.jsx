@@ -8,7 +8,10 @@ import Button from "../../../shared/components/Button/Button";
 import fields from "./fields";
 import initialState from "./initialState";
 
+import googleImg from "../../../assets/google.png"
+
 import style from "./loginForm.module.scss"
+
 
 const LoginForm = ({ onSubmit, onClick }) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState })
@@ -21,7 +24,17 @@ const LoginForm = ({ onSubmit, onClick }) => {
     }
 
     return (
-        <form className="" onSubmit={handleSubmit} >
+        <>
+            <div className={style.google_wrap}>
+                <p className={style.google_text}>You can use your Google Account to authorize:</p>
+                <button className={style.google_btn}>
+                    <img src={googleImg} width="84" height="18"/>
+                </button>
+            </div>
+        <p className={style.login_text}>
+         Login to our app using e-mail and password:
+        </p>
+            <form className="" onSubmit={handleSubmit} >
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input}/>
             <TextField onChange={handleChange} value={password} {...fields.password} className={style.last_input}/>
             <div className={style.wrap}>
@@ -29,6 +42,7 @@ const LoginForm = ({ onSubmit, onClick }) => {
                 <Button text="Sign up" type="button" onClick={handleClick}/>
             </div>
         </form>
+        </>
     )
 }
 
