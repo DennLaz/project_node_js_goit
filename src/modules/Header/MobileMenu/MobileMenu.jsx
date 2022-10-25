@@ -29,7 +29,7 @@ const MobileMenu = ({ onClick, isOpen }) => {
         dispatch(userLogout());
     }
 
-    const changeStyle = isOpen ? style.open  : style.overlay;
+    const changeStyle = isOpen ? style.open : style.overlay;
     
     const privateItems = items.filter(item => item.private === false);
     const publicItems = items.filter(item => item.private === false || item.private !== false);
@@ -53,14 +53,31 @@ const MobileMenu = ({ onClick, isOpen }) => {
         createPortal(
             (
             <>
-                {isOpen && <div className={style.overlay} >
+                {isOpen ? <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {elements}
+                        </ul>
+                    </div>
+                    </div> : <div className={style.open} >
                      <div className={style.mobile_container} >
                         <ul className={style.mobile_menu} >
                             {elements}
                         </ul>
                     </div>
                     </div>}
-                {isOpen && isLogin && <div className={style.overlay} >
+                { isOpen && isLogin ? <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {publicElements}
+                        </ul>
+                            <div onClick={onLogout} className={style.wrapper}>
+                                <svg onClick={onClick} className={style.icon_logout}>
+                                    <use href={`${sprite}#icon-sign-out`}></use>
+                                </svg>
+                            </div>
+                    </div>
+                </div> : <div className={style.open} >
                      <div className={style.mobile_container} >
                         <ul className={style.mobile_menu} >
                             {publicElements}
