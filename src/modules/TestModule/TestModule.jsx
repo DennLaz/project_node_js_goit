@@ -32,7 +32,7 @@ useEffect(()=>{
 
 
 
-const onFinishTest= async (value)=>{
+const onFinishTest= useCallback(async (value)=>{
   try {
     setTestName(testName);
     setLoading(true);
@@ -47,7 +47,7 @@ const onFinishTest= async (value)=>{
   
  
 
-}
+},[testName])
 
 const onStopTest=()=>{
   setTestName("");

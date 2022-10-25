@@ -27,7 +27,7 @@ const Result = ({ value, onClick }) => {
       if (i === correctAnswers) {
         clearInterval(timeId);
       }
-    }, 100);
+    }, 70);
   }, [value]);
 
   return (
@@ -62,7 +62,7 @@ const Result = ({ value, onClick }) => {
         </div>
         <div className={styles.answers}>
           <p className={styles.text_answer}>
-            Correct answers - <span className={styles.span}>{value}</span>{" "}
+            Correct answers - {correctAnswers === progress && <span className={styles.span}>{`${value} `}</span>}
           </p>
           <p className={styles.text_item}>
             Total questions - <span className={styles.span}>12</span>{" "}

@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState} from "react";
+import { useDispatch } from "react-redux";
 
 import { userLogout } from "../../redux/auth/authOperations";
 
