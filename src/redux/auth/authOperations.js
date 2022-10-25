@@ -4,6 +4,7 @@ import {
   loginInAPI,
   getCurrentUser,
   logoutFromAPI,
+  googleAPI
 } from "../../services/API/api";
 
 export const createNewUser = createAsyncThunk(
@@ -59,5 +60,16 @@ export const getUser = createAsyncThunk(
         return false;
       }
     },
+  }
+);
+
+export const googleAuth = createAsyncThunk(
+  "users/google",
+  async (_, { rejectWithValue }) => {
+    try {
+      return await googleAPI();
+    } catch (error) {
+      return rejectWithValue(error);
+    }
   }
 );
