@@ -6,6 +6,7 @@ import Loader from "./shared/components/Loader";
 import PrivateRoute from "./shared/components/PrivateRoute";
 import PublicRoute from "./shared/components/PublicRoute";
 
+const AuthSocial = lazy(() => import("./pages/AuthSocial"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 const TestPage = lazy(() => import("./pages/TestPage"));
 const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
@@ -18,7 +19,8 @@ const UserRoutes = () => {
       <Routes>
         
         <Route element={<PublicRoute />}>
-          <Route path="/" element={<AuthPage />} />          
+          <Route path="/" element={<AuthPage />} />
+          <Route path="/authSocial/:token" element={<AuthSocial />} />
         </Route>
 
         <Route element={<PrivateRoute />}>
