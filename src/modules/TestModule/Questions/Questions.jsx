@@ -27,10 +27,8 @@ const Questions = ({
   const [questionIndex, setQuestionIndex] = useState(0);
 
   ////////////////////////////////////////////////////////////////////////////////  
-  const [seconds, setSeconds] = useState(720);
+  const [seconds, setSeconds] = useState(10);
   const [timerActive, setTimerActive] = useState(true);
-
-
 
   useEffect(() => {
     if (seconds > 0 && timerActive) {
@@ -79,7 +77,6 @@ const Questions = ({
       return (prev -= 1);
     });
   };
-
   const confirmTest = () => {
     let idx = null;
     if (
