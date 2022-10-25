@@ -28,7 +28,7 @@ const LoginForm = ({ onSubmit, onClick }) => {
             <div className={style.google_wrap}>
                 <p className={style.google_text}>You can use your Google Account to authorize:</p>
                 <button className={style.google_btn}>
-                    <img src={googleImg} width="84" height="18"/>
+                    <img alt="google icon" src={googleImg} width="84" height="18"/>
                 </button>
             </div>
         <p className={style.login_text}>

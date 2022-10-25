@@ -1,8 +1,7 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { useMediaPredicate } from "react-media-hook";
 
 import { userName } from '../../../redux/auth/authSelectors';
-import { userLogout } from "../../../redux/auth/authOperations";
 
 import useAuth from "../../../shared/hooks/useAuth";
 

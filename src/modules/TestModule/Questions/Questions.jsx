@@ -40,7 +40,7 @@ const Questions = ({
     } else {
       setTimerActive(false);
     }
-  }, [seconds, timerActive]);
+  }, [seconds, timerActive, arrOfAnswers, onFinishTest]);
 
 
   function addLeadingZero(value) {
@@ -190,7 +190,7 @@ const Questions = ({
         {questionIndex < 11 && (<TestingButtons text="Next question" type="button" onClick={onNextClick}/>)}
           
         {questionIndex === 11 && (<TestingButtons text="Finish test" type="button" onClick={confirmTest}/>)}
-        {seconds === 720 && <Alert message="Your test has started we have 12 minutes to complete" type="success" />}
+        {seconds === 719 && <Alert message="Your test has started we have 12 minutes to complete" type="success" />}
         {seconds === 60 && <Alert message="You have 1 minute left before the end of the test, hurry up..." type="failure" />}
           </div>
       </div>
