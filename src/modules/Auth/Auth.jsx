@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createNewUser, loginOldUser } from "../../redux/auth/authOperations";
+import { createNewUser, loginOldUser, googleAuth } from "../../redux/auth/authOperations";
 
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
@@ -40,6 +40,13 @@ const Auth = () => {
     [dispath]
   );
 
+  const loginGoogleUser = useCallback(
+    () => {
+      dispath(googleAuth());
+    },
+    [dispath]
+  );
+
   const handleClick = (value) => {
     setState(value);
   };
@@ -64,7 +71,7 @@ const Auth = () => {
 
           <div className={style.form_wrapper}>
             {state === "login" && (
-              <LoginForm onSubmit={loginUser} onClick={handleClick} />
+              <LoginForm onSubmit={loginUser} onClick={handleClick} onGoogleClick={loginGoogleUser}/>
             )}
             {state === "register" && (
               <RegisterForm onSubmit={registerNewUser} onClick={handleClick} />

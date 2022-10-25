@@ -13,7 +13,7 @@ import googleImg from "../../../assets/google.png"
 import style from "./loginForm.module.scss"
 
 
-const LoginForm = ({ onSubmit, onClick }) => {
+const LoginForm = ({ onSubmit, onClick, onGoogleClick }) => {
     const { state, handleChange, handleSubmit } = useForm({ onSubmit, initialState })
     
     const { email, password } = state;
@@ -27,7 +27,7 @@ const LoginForm = ({ onSubmit, onClick }) => {
         <>
             <div className={style.google_wrap}>
                 <p className={style.google_text}>You can use your Google Account to authorize:</p>
-                <button className={style.google_btn}>
+                <button onClick={onGoogleClick} className={style.google_btn}>
                     <img alt="google icon" src={googleImg} width="84" height="18"/>
                 </button>
             </div>
@@ -49,11 +49,13 @@ const LoginForm = ({ onSubmit, onClick }) => {
 LoginForm.defaultProps = {
     onSubmit: ()=> {},
     onClick:()=>{},
+    onGoogleClick:()=>{},
 }
 
 LoginForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
     onClick: PropTypes.func.isRequired,
+    onGoogleClick: PropTypes.func.isRequired,
 }
 
 export default LoginForm;
