@@ -27,7 +27,7 @@ const Questions = ({
   const [questionIndex, setQuestionIndex] = useState(0);
 
   ////////////////////////////////////////////////////////////////////////////////  
-  const [seconds, setSeconds] = useState(10);
+  const [seconds, setSeconds] = useState(720);
   const [timerActive, setTimerActive] = useState(true);
 
   useEffect(() => {
