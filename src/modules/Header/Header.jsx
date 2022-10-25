@@ -6,7 +6,6 @@ import { userLogout } from "../../redux/auth/authOperations";
 
 import useAuth from "../../shared/hooks/useAuth";
 
-
 import Logo from "../../shared/components/Logo";
 import UserMenu from "./UserMenu";
 import UserInfo from "./UserInfo"
@@ -16,16 +15,13 @@ import HeaderMenu from "./HeaderMenu";
 import sprite from "../../assets/svg/sprite.svg"
 import style from "./header.module.scss";
 
-
-
 const Header = () => {
     const [isOpen, changeOpen] = useState(false);
 
     const isLogin = useAuth();
     const dispatch = useDispatch();
     
-  const changeStyle = isLogin ? style.header : style.isActive;
-
+    const changeStyle = isLogin ? style.header : style.isActive;
     
     function onLogout() {
         dispatch(userLogout());
@@ -44,18 +40,17 @@ const Header = () => {
             <div className={`container ${style.container_header}`}>
                 <div><Logo/></div>
                 
-                
                 <div className={style.wrapper}>
                     <HeaderMenu />
                     <UserInfo />
                     {isLogin && 
-                            <svg onClick={onLogout}  className={style.icon_logout}>
-                                <use  href={`${sprite}#icon-sign-out`}></use>
-                            </svg>
+                    <svg onClick={onLogout}  className={style.icon_logout}>
+                        <use  href={`${sprite}#icon-sign-out`}></use>
+                    </svg>
                     }
                     <UserMenu onClick={onMenuClick} isOpen={isOpen} />
                     <MobileMenu onClick={onMenuClick} isOpen={isOpen} />
-                    </div>
+                </div>
             </div>
         </header>       
   );
