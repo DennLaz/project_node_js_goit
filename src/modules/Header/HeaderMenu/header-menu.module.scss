@@ -1,5 +1,3 @@
-
-
 @media screen and (max-width: 767px) {
     .menu {
         display: none;
@@ -31,6 +29,26 @@
     }
 }
 
+.item {
+    transition: 700ms ease-in-out;
+}
+
+.item:hover,
+.item:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+}
+
+.public_item {
+    transition: 700ms ease-in-out;
+}
+
+.public_item:hover,
+.public_item:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+}
+
 .public_item:not(:last-child) {
     margin-right: 60px;
 }
@@ -51,11 +69,13 @@
     .link {
         font-size: 12px;
         line-height: 0.7;
+        padding: 25px 0;
     }
 
     .isActive {
         font-size: 12px;
         line-height: 0.7;
+        padding: 25px 0;
     }
 }
 
