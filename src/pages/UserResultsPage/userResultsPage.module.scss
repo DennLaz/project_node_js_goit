@@ -1,0 +1,47 @@
+.head_text {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.box_wrap {
+  display: flex;
+}
+
+.theory_wrap {
+  width: 624px;
+  text-align: center;
+  border-right: var(--color-border-bottom);
+
+  padding: 40px 20px;
+}
+
+.theory_text {
+  text-align: start;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 19px;
+}
+
+.tech_text {
+  text-align: start;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 19px;
+}
+
+.tech_wrap {
+  width: 624px;
+  text-align: center;
+
+  padding: 40px 20px;
+}
+
+.second_head_text {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.total_result_wrap {
+  display: flex;
+  justify-content: space-around;
+}
