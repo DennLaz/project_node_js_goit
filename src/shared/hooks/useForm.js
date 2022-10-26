@@ -13,14 +13,9 @@ const useForm = ({ onSubmit, initialState }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ ...state });
-    // reset();
   };
 
-  const reset = () => {
-    setState({ ...initialState });
-  };
-
-  return { state, setState, handleChange, handleSubmit, reset };
+  return { state, setState, handleChange, handleSubmit };
 };
 
 useForm.defaultProps = {

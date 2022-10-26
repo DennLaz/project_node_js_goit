@@ -3,7 +3,7 @@ import s from "./button.module.scss";
 
 const Button = (props) => {
 
-  const { type, text, onClick, active, className } = props;
+  const { type, text, onClick, active, className, disabled } = props;
     
   const setClass = () => {
     return active? s.btn_active : s.btn;
@@ -13,8 +13,10 @@ const Button = (props) => {
     <button
         className={`${setClass()} ${className}`}
         onClick={onClick}
-        type={type}>
-        {text}
+      type={type}
+    disabled={disabled} >
+      {text}
+      
     </button>
   );
 };
@@ -22,13 +24,15 @@ const Button = (props) => {
 Button.defaultProps = {
   active: false,
   type: "submit",
-  onClick: () => {},
+  onClick: () => { },
+  disabled: false,
 };
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
 };
 
 export default Button;
