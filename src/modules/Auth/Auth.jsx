@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createNewUser, loginOldUser} from "../../redux/auth/authOperations";
 
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 
-
-
+import {setEmailToRedux} from "../../redux/auth/authSlice"
 import { userName } from "../../redux/auth/authSelectors";
 
 import style from "./auth.module.scss";
@@ -14,10 +14,12 @@ import style from "./auth.module.scss";
 const Auth = () => {
   const [state, setState] = useState("login");
 
+  const navigate = useNavigate()
 
   const dispath = useDispatch();
 
   const userOk = useSelector(userName);
+  
 
   useEffect(() => {
     if (userOk && userOk === "ok") {
@@ -25,9 +27,11 @@ const Auth = () => {
     }
   }, [userOk]);
 
-  const registerNewUser = useCallback(
-    (userData) => {
-      dispath(createNewUser(userData));
+  const registerNewUser =  useCallback(
+       (userData) => {
+         dispath(setEmailToRedux(userData.email))
+       dispath(createNewUser(userData));
+      navigate("/verify")
       
     },
     [dispath]

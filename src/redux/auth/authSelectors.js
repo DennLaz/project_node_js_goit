@@ -13,3 +13,7 @@ export const userName = (store) => {
 export const getErrorLoadingAuth = (store) => {
   return { loading: store.auth.loading, error: store.auth.error };
 };
+
+export const getUserEmail = (store) => {
+  return store.auth.user?.userEmail;
+};
