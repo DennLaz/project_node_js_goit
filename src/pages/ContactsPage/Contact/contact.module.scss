@@ -28,6 +28,7 @@
 }
 
 .title {
+  color: var(--text-materials);
   font-weight: 700;
   font-size: 12px;
   line-height: 12px;
@@ -51,7 +52,7 @@
   line-height: 16px;
   letter-spacing: 0.02em;
   margin-bottom: 6px;
-  color: var(--text-primary);
+  color: var(--text-materials);
 }
 
 .containerLink {
@@ -64,12 +65,14 @@
   height: 2em;
   stroke-width: 0;
   margin: 0 8px;
+  transition: 700ms ease-in;
 }
 
 .icon:hover,
 .icon:focus {
-  stroke: var(--bcg-btn-active) r;
-  fill: var(--bcg-btn-active);
-  mask-image: var(--bcg-btn-active);
+  stroke:RoyalBlue;
+  fill:RoyalBlue;
+  mask-image:RoyalBlue;
   margin: 0 8px;
+  transition: 400ms ease-in;
 }

@@ -1,9 +1,14 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import ArrayLinks from './ArrayLinks'
+
+// import { useTheme } from "../../../shared/hooks/useTheme";
+
 import style from "../materials.module.scss";
 
 const Links = () => {
+  // const { theme, setTheme } = useTheme();
+  
   return (
     <div className={style.resources}>
       <h2 className={style.title}>Useful resources</h2>

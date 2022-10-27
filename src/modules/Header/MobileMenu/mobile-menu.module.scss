@@ -11,14 +11,14 @@
     -webkit-box-pack: center;
     z-index: 1;
 
-    transition: 700ms ease-in; 
+    transition: 500ms ease-in; 
 }
 
 .open {
     composes: overlay;
 
     left: 100%;
-    transition: 700ms ease-in;
+    transition: 500ms ease-in;
 }
 
 @media screen and (min-width: 768px) {
@@ -32,7 +32,7 @@
     top: 1px;
     width: 100%;
     height: 100vh;
-    background-color: #F5F6FB;
+    background-color: var(--bcg-primary);
 
     z-index: 1;
 }
@@ -64,19 +64,19 @@
     flex-direction: column;
 
     border-bottom: 1px solid var(--color-border);
-    transition: 700ms ease-in-out;
+    // transition: 300ms ease-in-out;
 }
 
 .item:hover,
 .item:focus {
     transform: scale(1.05);
-    transition: 700ms ease-in-out;
+    transition: 300ms ease-in-out;
 }
 
 .link {
     font-size: 14px;
     line-height: 0.86;
-    color: var(--color-text);
+    color: var(--text-primary);
     transition: 1000ms;
     padding: 26px 50px;
 }
@@ -108,6 +108,7 @@
     margin-top: 28px;
 
     cursor: pointer;
+    fill: var(--text-primary);
     transition: 500ms ease-in-out;
     z-index: 999;
 }

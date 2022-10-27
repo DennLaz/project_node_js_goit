@@ -101,7 +101,7 @@
 .text_item::before {
   content: "";
   margin: 0 10px;
-  border: 1px solid #00122f;
+  border: var(--color-border-result);
   @media screen and (min-width: 768px) {
     margin: 0 20px;
   }
@@ -153,6 +153,7 @@
   background: #ff6b09;
   margin-top: 20px;
   border: none;
+  border: 1px solid var(--color-input);
 
   font-size: 14px;
   line-height: 16px;

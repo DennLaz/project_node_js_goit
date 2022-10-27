@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { userLogout } from "../../redux/auth/authOperations";
 
 import useAuth from "../../shared/hooks/useAuth";
+import { useTheme } from "../../shared/hooks/useTheme";
 
 import Logo from "../../shared/components/Logo";
 import UserMenu from "./UserMenu";
@@ -12,10 +13,13 @@ import UserInfo from "./UserInfo"
 import MobileMenu from "./MobileMenu";
 import HeaderMenu from "./HeaderMenu";
 
+import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import sprite from "../../assets/svg/sprite.svg"
 import style from "./header.module.scss";
 
 const Header = () => {
+    const {theme, setTheme} = useTheme();
     const [isOpen, changeOpen] = useState(false);
 
     const isLogin = useAuth();
@@ -30,6 +34,12 @@ const Header = () => {
     const onMenuClick = () => {
         isOpen ? changeOpen(false) : changeOpen(true);
     };
+    const handleLightThemeClick = () => {
+        setTheme('light')
+    }
+    const handleDarkThemeClick = () => {
+        setTheme('dark')
+    }
 
     const bodyEl = document.querySelector("body");    
     isOpen ? bodyEl.style.overflow = 'hidden' : bodyEl.style.overflow = 'auto';
@@ -41,6 +51,11 @@ const Header = () => {
                 <div><Logo/></div>
                 
                 <div className={style.wrapper}>
+                    {theme === 'dark' ? <div className={style.dark} onClick={handleLightThemeClick}>
+                        <NightlightOutlinedIcon/>
+                    </div> : <div className={style.light} onClick={handleDarkThemeClick}>
+                        <WbSunnyOutlinedIcon/>
+                    </div>}
                     <HeaderMenu />
                     <UserInfo />
                     {isLogin && 
