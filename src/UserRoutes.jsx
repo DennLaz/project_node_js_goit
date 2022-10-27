@@ -20,23 +20,21 @@ const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        
         <Route element={<PublicRoute />}>
           <Route path="/" element={<AuthPage />} />
           <Route path="/authSocial/:token" element={<AuthSocial />} />
         </Route>
 
         <Route element={<PrivateRoute />}>
-            <Route path="/test" element={<TestPage />} />
-          <Route path="/materials" element={<MaterialsPage />} /> 
+          <Route path="/test" element={<TestPage />} />
+          <Route path="/materials" element={<MaterialsPage />} />
         </Route>
 
-        <Route path="/reset-password" element={<RePasswordPage />} />       
-        <Route path="/verify" element={<VerifyPage />} />       
-        <Route path="/user-results" element={<UserResultsPage />} />       
+        <Route path="/reset-password" element={<RePasswordPage />} />
+        <Route path="/verify" element={<VerifyPage />} />
+        <Route path="/user-results/:id" element={<UserResultsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        
       </Routes>
     </Suspense>
   );

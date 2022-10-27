@@ -31,8 +31,8 @@ const LoginForm = ({ onSubmit, onClick}) => {
         <>
             <div className={style.google_wrap}>
                 <p className={style.google_text}>You can login with:</p>
-                <Link to={{ pathname: `${pathGoogle}` }} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18" /></Link>
-                <Link to={{ pathname: `${pathFacebook}`}} className={style.facebook_btn} rel="noreferrer noopener" >Facebook</Link>
+                <a href={pathGoogle} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18" /></a>
+                <a href={pathFacebook} className={style.facebook_btn} rel="noreferrer noopener" >Facebook</a>
                 
             </div>
         <p className={style.login_text}>
