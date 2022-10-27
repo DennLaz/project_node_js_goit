@@ -8,6 +8,7 @@ import PublicRoute from "./shared/components/PublicRoute";
 
 const AuthSocial = lazy(() => import("./pages/AuthSocial"));
 const VerifyPage = lazy(() => import("./pages/VerifyPage"));
+const UserResultsPage = lazy(() => import("./pages/UserResultsPage"));
 const RePasswordPage = lazy(() => import("./pages/RePasswordPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 const TestPage = lazy(() => import("./pages/TestPage"));
@@ -19,22 +20,21 @@ const UserRoutes = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        
         <Route element={<PublicRoute />}>
           <Route path="/" element={<AuthPage />} />
           <Route path="/authSocial/:token" element={<AuthSocial />} />
         </Route>
 
         <Route element={<PrivateRoute />}>
-            <Route path="/test" element={<TestPage />} />
-          <Route path="/materials" element={<MaterialsPage />} /> 
+          <Route path="/test" element={<TestPage />} />
+          <Route path="/materials" element={<MaterialsPage />} />
         </Route>
 
-        <Route path="/reset-password" element={<RePasswordPage />} />       
-        <Route path="/verify" element={<VerifyPage />} />       
+        <Route path="/reset-password" element={<RePasswordPage />} />
+        <Route path="/verify" element={<VerifyPage />} />
+        <Route path="/user-results/:id" element={<UserResultsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        
       </Routes>
     </Suspense>
   );
