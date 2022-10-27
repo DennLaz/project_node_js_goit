@@ -1,5 +1,4 @@
 .header {
-    // position: -webkit-sticky;
     position: sticky;
 
     width: 100vw;
@@ -18,15 +17,13 @@
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
     .header {
        position: relative;
     }
 }
 
 .isActive {
-    // position: -webkit-sticky;
-    // position: sticky;
     position: fixed;
     width: 100vw;
     top: 0;
@@ -37,7 +34,7 @@
     z-index: 1000;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 768px) {
     .isActive {
         position: relative;
     }
@@ -99,18 +96,21 @@
     justify-content: center;
     margin-right: 10px;
     padding: 7px;
-    // width: 30px;
-    // height: 30px;
+
     color: white;
     cursor: pointer;
     border-radius: 50%;
     transition: 700ms ease-in;
 }
 
+@media screen and (max-width: 767px) {
+    .dark {
+        margin: 0;
+    }
+}
+
 .dark:hover,
 .dark:focus {
-    // background-color: gray;
-    // background-color: rgb(237, 231, 225);
     background-color: rgb(108, 122, 137);
     transition: 700ms ease-in;
 }
@@ -121,16 +121,20 @@
     justify-content: center;
     padding: 7px;
     margin-right: 10px;
-    // width: 30px;
-    // height: 30px;
+
     cursor: pointer;
     border-radius: 50%;
     transition: 700ms ease-in;
 }
 
+@media screen and (max-width: 767px) {
+    .light {
+        margin: 0;
+    }
+}
+
 .light:hover,
 .light:focus {
-    // background-color: rgb(255, 132, 0);
     background-color: rgb(237, 231, 225);
     transition: 700ms ease-in;
 }

@@ -17,9 +17,6 @@
 
     &:focus,
     &:hover {
-        // background-color: var(--bcg-btn-active);
-        // color: var(--text-light);
-        // border: 1px solid #BC8F8F;
         outline: none;
     }
 }
@@ -29,15 +26,6 @@
     background-color: var(--bcg-btn-active);
     color: var(--text-light);
     padding: 23px 25px;
-    // border: none;
-        &:focus,
-        &:hover {
-        //     background-color: var(--bcg-btn-light);
-        // color: var(--text-primary);
-            // border: none;
-            // background-color: #FF7F50;
-            
-    }
 }
 
 @media screen and (min-width: 768px) {
