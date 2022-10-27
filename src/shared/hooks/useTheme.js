@@ -1,6 +1,6 @@
 import { useState, useLayoutEffect } from "react";
 
-const isDarkTheme = window?.matchMedia('(prefers-color-scheme: dark)').matches
+const isDarkTheme = window?.matchMedia('(prefers-color-scheme: light)').matches
 const defaultTheme = !isDarkTheme ? 'light'  : 'dark'
 
 export const useTheme = () => {
