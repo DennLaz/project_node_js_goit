@@ -17,3 +17,7 @@ export const getErrorLoadingAuth = (store) => {
 export const getUserEmail = (store) => {
   return store.auth.user?.userEmail;
 };
+
+export const getUserId = (store) => {
+  return store.auth.user.userId;
+};

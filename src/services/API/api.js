@@ -45,6 +45,11 @@ export const reSendEmail = async (email) => {
 };
 
 export const sendNewPassword = async (email) => {
-  const data = await instance.post("user/reset/password", email);
+  const data = await instance.post("/users/reset/password", email);
+  return data;
+};
+
+export const getUserResult = async (id) => {
+  const { data } = await instance.get(`/users/${id}`);
   return data;
 };

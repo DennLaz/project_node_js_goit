@@ -41,8 +41,8 @@ const RePasswordPage = () => {
     const { email } = state;
 
     return (
-        <div className={style.wrap}>
-            <div className={`container ${style.wrap_content}`}>
+        <div className="container">
+            <div className={style.wrap_content}>
                 <p className={style.text}>Enter your email to recover your password:</p>
                 <form onSubmit={handleSubmit}>
                     <TextField onChange={handleChange} value={email} {...fields.email} className={style.input } />

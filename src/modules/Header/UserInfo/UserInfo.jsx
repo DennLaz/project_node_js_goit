@@ -1,10 +1,9 @@
 
 import { useSelector } from "react-redux";
+import { useNavigate} from 'react-router-dom';
 
 import { useMediaPredicate } from "react-media-hook";
-
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
+import {getUserId} from "../../../redux/auth/authSelectors"
 
 import { userName } from '../../../redux/auth/authSelectors';
 
@@ -16,6 +15,16 @@ function UserInfo() {
     const isMobile = useMediaPredicate("(max-width: 767px)");
     const isLogin = useAuth();
 
+  
+    const id = useSelector(getUserId)
+    const navigate = useNavigate()
+
+    const onClick = () => {
+    
+    navigate(`/user-results/${id}`)
+    
+    }
+
     const name = useSelector(userName);
 
     const newName = isLogin ? name.toUpperCase().charAt(0) : '';
@@ -25,9 +34,7 @@ function UserInfo() {
             {
             isLogin && (
                     <div className={style.wrapper} >
-                        <Tippy delay={200} content={name}>
-                            <p className={style.new_name} >{newName}</p>
-                        </Tippy>
+                            <button onClick={onClick} className={style.new_name} >{newName}</button>
                         <span className={style.name}>{name}</span>
                     </div>
                 )
