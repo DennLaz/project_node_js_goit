@@ -8,6 +8,7 @@ import Button from "../../../shared/components/Button/Button";
 import fields from "./fields";
 import initialState from "./initialState";
 
+
 import googleImg from "../../../assets/google.png"
 
 import style from "./loginForm.module.scss"
@@ -23,25 +24,27 @@ const LoginForm = ({ onSubmit, onClick}) => {
         return
     }
 
-    const path = "//node-project-pro-test.herokuapp.com/api/users/google"
+    const pathGoogle = "//node-project-pro-test.herokuapp.com/api/users/google"
+    const pathFacebook = "//node-project-pro-test.herokuapp.com/api/users/facebook/callback"
 
     return (
         <>
             <div className={style.google_wrap}>
-                <p className={style.google_text}>You can use your Google Account to authorize:</p>
-                <Link to={{ pathname: `${path}`}} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18"/></Link>
-                {/* <a href="https://node-project-pro-test.herokuapp.com/api/users/google" rel="noreferrer noopener" className={style.google_btn}>
-                    <img alt="google icon" src={googleImg} width="84" height="18"/>
-                </a> */}
+                <p className={style.google_text}>You can login with:</p>
+                <Link to={{ pathname: `${pathGoogle}` }} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18" /></Link>
+                <Link to={{ pathname: `${pathFacebook}`}} className={style.facebook_btn} rel="noreferrer noopener" >Facebook</Link>
+                
             </div>
         <p className={style.login_text}>
          Login to our app using e-mail and password:
         </p>
             <form className="" onSubmit={handleSubmit} >
             <TextField onChange={handleChange} value={email} {...fields.email} className={style.input}/>
-            <TextField onChange={handleChange} value={password} {...fields.password} className={style.last_input}/>
-            <div className={style.wrap}>
-                <Button text="Sign in" type="submit" active="true" />
+                <TextField onChange={handleChange} value={password} {...fields.password} className={style.last_input} />
+                <Link to="/reset-password" className={style.pass_link}>Forgot password?</Link>
+                <div className={style.wrap}>
+                
+                <Button text="Sign in" type="submit" active />
                 <Button text="Sign up" type="button" onClick={handleClick}/>
             </div>
         </form>

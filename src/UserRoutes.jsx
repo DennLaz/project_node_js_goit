@@ -7,6 +7,8 @@ import PrivateRoute from "./shared/components/PrivateRoute";
 import PublicRoute from "./shared/components/PublicRoute";
 
 const AuthSocial = lazy(() => import("./pages/AuthSocial"));
+const VerifyPage = lazy(() => import("./pages/VerifyPage"));
+const RePasswordPage = lazy(() => import("./pages/RePasswordPage"));
 const AuthPage = lazy(() => import("./pages/AuthPage"));
 const TestPage = lazy(() => import("./pages/TestPage"));
 const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
@@ -29,6 +31,9 @@ const UserRoutes = () => {
           <Route path="/materials" element={<MaterialsPage />} /> 
 
         </Route>
+
+        <Route path="/reset-password" element={<RePasswordPage />} />       
+        <Route path="/verify" element={<VerifyPage />} />       
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="*" element={<NotFoundPage />} />
         

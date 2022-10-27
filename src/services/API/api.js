@@ -38,3 +38,13 @@ export const getCurrentUser = async (token) => {
     throw error;
   }
 };
+
+export const reSendEmail = async (email) => {
+  const resault = await instance.post("/users/verify", { email });
+  return resault;
+};
+
+export const sendNewPassword = async (email) => {
+  const data = await instance.post("user/reset/password", email);
+  return data;
+};

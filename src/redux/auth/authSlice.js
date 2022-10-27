@@ -18,11 +18,9 @@ const authSlice = createSlice({
       ...store,
       loading: false,
       user: {
+        ...store.user,
         userName: "ok",
       },
-      // user: {
-      //   userName: payload.username,
-      // },
     }),
 
     [loginOldUser.pending]: pending,
@@ -58,8 +56,17 @@ const authSlice = createSlice({
         token: payload,
       };
     },
+    setEmailToRedux: (store, { payload }) => {
+      return {
+        ...store,
+        user: {
+          ...store.user,
+          userEmail: payload,
+        },
+      };
+    },
   },
 });
 
-export const { setTokenToRedux } = authSlice.actions;
+export const { setTokenToRedux, setEmailToRedux } = authSlice.actions;
 export default authSlice.reducer;
