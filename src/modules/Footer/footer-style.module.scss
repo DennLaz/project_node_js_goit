@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--bcg-test-dark);
-
   width: 100%;
+  // -webkit-text-size-adjust: 100%;
 }
 
 .wrapper {
@@ -43,6 +43,10 @@
 
 .text_year::before {
   content: "\00A9";
+  margin-right:4px;
+  @media screen and (min-width: 768px) {
+    margin-right:8px;
+  }
 }
 
 .text_item::before {

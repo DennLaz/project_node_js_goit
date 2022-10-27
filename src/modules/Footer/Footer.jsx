@@ -10,9 +10,9 @@ const Footer = () => {
     <footer className={style.footer}>
       <div className={`container  ${style.wrapper}`}>
         <div className={style.text}>
-          <p className={style.text_year}> {today.getFullYear()} </p>
-          <p className={style.text_item}> All Rights Reserved </p>
-          <p className={style.text_item}> Developed with </p>
+          <p className={style.text_year}>{today.getFullYear()}</p>
+          <p className={style.text_item}>All Rights Reserved</p>
+          <p className={style.text_item}>Developed with</p>
           <svg className={style.icon}>
             <use href={`${sprite}#icon-heart`}></use>
           </svg>
@@ -20,9 +20,7 @@ const Footer = () => {
         <div className={style.text_link}>
           <NavLink className={style.text_link_item}
             to={"/contacts"}
-            >
-              by GoIT Students
-          </NavLink>
+            >by GoIT Students</NavLink>
         </div>
       </div>
     </footer>
