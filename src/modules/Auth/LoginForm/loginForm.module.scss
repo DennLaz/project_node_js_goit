@@ -67,7 +67,7 @@
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: rgb(0, 132, 176);
+    color: var(--color-pass-link-hover);
   }
 }
 

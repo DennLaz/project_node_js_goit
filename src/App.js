@@ -8,7 +8,7 @@ import Header from "./modules/Header";
 import Footer from "./modules/Footer";
 import UserRoutes from "./UserRoutes";
 import Loader from "./shared/components/Loader"
-
+// import VerifyPage from "./pages/VerifyPage";
 
 
 import { getErrorLoadingAuth} from "./redux/auth/authSelectors";
@@ -29,6 +29,7 @@ const { loading } = useSelector(getErrorLoadingAuth);
   return (
     <>
       <Header />
+      {/* <VerifyPage/> */}
         <main>
       <UserRoutes />
       </main>

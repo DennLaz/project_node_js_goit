@@ -2,6 +2,7 @@
   width: 280px;
   height: 370px;
   background: var(--bcg-second);
+  // background-color: SteelBlue;
   border: 1px solid #e2e3e5;
   margin-top: 20px;
   @media (min-width: 768px) {
@@ -65,14 +66,14 @@
   height: 2em;
   stroke-width: 0;
   margin: 0 8px;
-  transition: 700ms ease-in;
+  transition: 400ms ease-in;
 }
 
 .icon:hover,
 .icon:focus {
-  stroke:RoyalBlue;
-  fill:RoyalBlue;
-  mask-image:RoyalBlue;
+  stroke:var(--fill-contact-icon);
+  fill:var(--fill-contact-icon);
+  mask-image:var(--fill-contact-icon);
   margin: 0 8px;
   transition: 400ms ease-in;
 }

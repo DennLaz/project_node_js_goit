@@ -54,6 +54,10 @@ html[data-theme='light'] {
   --bgc-form: #ffffff;
   --color-border-result: 1px solid #00122f;
   --border-result: none;
+  --color-pass-link-hover: rgb(0, 132, 176);
+  --bcg-big-button: #02172a;
+  --color-big-button: #ffffff;
+  --fill-contact-icon: #ff6b01;
 }
 
 /* Dark theme */
@@ -87,6 +91,10 @@ html[data-theme='dark']{
   --bgc-form: SteelBlue;
   --color-border-result: 1px solid #d7d7d7;
   --border-result: #ced2d1;
+  --color-pass-link-hover: MediumBlue;
+  --bcg-big-button: #ffffff;
+  --color-big-button: #000000;
+  --fill-contact-icon: RoyalBlue;
 }
 
 body {
@@ -104,7 +112,7 @@ body {
   transition: background-color 500ms ease-in-out;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 767px) {
   body {
     padding-top: 70px;
   }
