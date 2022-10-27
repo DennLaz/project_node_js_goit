@@ -64,7 +64,7 @@ const UserResultsPage = () => {
   const totalAttemps = theoryCounter + techCounter
 
   const theoryEl = () => percentTheoryResult < 50 ? (
-            <ProgressBar
+           <ProgressBar
               className="space"
               label={"Average mark:"}
               progressColor={"red"}

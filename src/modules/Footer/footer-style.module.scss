@@ -1,7 +1,9 @@
 .footer {
   background-color: var(--bcg-test-dark);
+
+  transition: background-color 500ms ease-in-out;
+
   width: 100%;
-  // -webkit-text-size-adjust: 100%;
 }
 
 .wrapper {

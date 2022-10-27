@@ -2,7 +2,7 @@
     width: 55px;
     height: 34px;
     padding: 5px 15px;
-    border: none;
+    border: 1px solid var(--border-result);
     background-color: var(--bcg-btn-light);
 
     transition: 700ms ease-in-out;
@@ -26,7 +26,7 @@
     width: 55px;
     height: 34px;
     padding: 5px 15px;
-    border: none;
+    border: 1px solid var(--border-result);
     fill: var(--bcg-btn-light);
     background-color: var(--bcg-btn-active);
 
@@ -47,7 +47,7 @@
         width: 210px;
         height: 34px;
         padding: 5px 20px;
-        border: none;
+        border: 1px solid var(--border-result);
         background-color: var(--bcg-btn-light);
     }
 
@@ -58,7 +58,7 @@
         height: 34px;
         padding: 5px 20px;
 
-        border: none;
+        border: 1px solid var(--border-result);
         color: var(--bcg-btn-light);
         fill: var(--bcg-btn-light);
         background-color: var(--bcg-btn-active);

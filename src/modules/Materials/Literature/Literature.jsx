@@ -1,7 +1,14 @@
 import React from "react";
+
+// import { useTheme } from "../../../shared/hooks/useTheme";
+
 import style from "../materials.module.scss";
 
 const Literature = () => {
+  // const { theme, setTheme } = useTheme();
+
+  // const changeStyle = theme === 'dark' ? style.title : style.title_dark;
+  
   return (
     <div className={style.literature}>
       <h2 className={style.title}>Useful literature</h2>

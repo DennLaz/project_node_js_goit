@@ -6,14 +6,15 @@
   font-size: 24px;
   line-height: 1.22;
   letter-spacing: 0.02em;
-  color: var(--text-light);
-  background-color: var(--bcg-btn-dark);
+  background-color: var(--bcg-big-button);;
+  color: var(--color-big-button);
   padding-top: 60px;
   padding-bottom: 42px;
   border: none;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 2px 20px;
   transition: 0.2s;
   @media screen and (min-width: 768px) {
     width: 400px;
@@ -42,6 +43,7 @@
 .btn_orang {
   @extend .btn;
   padding: 60px 88px 42px 87px;
+  color: var(--text-light);
   background-color: var(--bcg-test-light);
   @media screen and (min-width: 768px) {
     padding: 60px 134px 42px 134px
