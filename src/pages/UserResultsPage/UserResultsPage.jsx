@@ -57,10 +57,10 @@ const UserResultsPage = () => {
 
   const {username, email, techCounter, techResults, theoryCounter, theoryResults} = user
   
-  const percentTechResult = Math.round(techResults * 100)
+  const percentTechResult = Math.round(techResults * 100) 
   const percentTheoryResult = Math.round(theoryResults * 100)
   
-  const total = Math.round((techCounter * percentTechResult + theoryCounter * percentTheoryResult) / (theoryCounter + techCounter))
+  const total = Math.round((techCounter * percentTechResult + theoryCounter * percentTheoryResult) / (theoryCounter + techCounter)) || 0
   const totalAttemps = theoryCounter + techCounter
 
   const theoryEl = () => percentTheoryResult < 50 ? (

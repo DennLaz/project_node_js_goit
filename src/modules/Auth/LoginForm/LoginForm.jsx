@@ -10,6 +10,7 @@ import initialState from "./initialState";
 
 
 import googleImg from "../../../assets/google.png"
+import facebookImg from "../../../assets/facebook.png"
 
 import style from "./loginForm.module.scss"
 
@@ -24,16 +25,15 @@ const LoginForm = ({ onSubmit, onClick}) => {
         return
     }
 
-    const pathGoogle = "//node-project-pro-test.herokuapp.com/api/users/google"
-    const pathFacebook = "//node-project-pro-test.herokuapp.com/api/users/facebook/callback"
+    const pathGoogle = "//pro-test.onrender.com/api/users/google"
+    const pathFacebook = "//pro-test.onrender.com/api/users/facebook/callback"
 
     return (
         <>
-            <div className={style.google_wrap}>
                 <p className={style.google_text}>You can login with:</p>
+            <div className={style.google_wrap}>
                 <a href={pathGoogle} className={style.google_btn} rel="noreferrer noopener" > <img alt="google icon" src={googleImg} width="84" height="18" /></a>
-                <a href={pathFacebook} className={style.facebook_btn} rel="noreferrer noopener" >Facebook</a>
-                
+                <a href={pathFacebook} className={style.facebook_btn} rel="noreferrer noopener" > <img alt="facebbok icon" src={ facebookImg} width="24" height="24" />Facebook</a>
             </div>
         <p className={style.login_text}>
          Login to our app using e-mail and password:

@@ -9,7 +9,7 @@
 
 @media screen and (min-width: 768px) {
   .text {
-    padding-top: 82px;
+    padding-top: 80px;
     padding-bottom: 20px;
     font-size: 30px;
     line-height: 1.23;
@@ -18,7 +18,7 @@
 
 @media screen and (min-width: 1280px) {
   .text {
-    padding-top: 170px;
+    padding-top: 40px;
     font-size: 34px;
   }
 }
@@ -71,6 +71,14 @@
   background-color: var(--bgc-form);
   box-shadow: var(--color-shodow);
   padding: 40px 20px;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+
+  @media (min-width: 1280px) {
+    margin-top: 94px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -98,7 +106,7 @@
   .main_wrapper {
     flex-direction: row;
     padding: 0;
-    padding-bottom: 99px;
+    padding-bottom: 93px;
     gap: 112px;
     justify-content: center;
     align-items: baseline;
