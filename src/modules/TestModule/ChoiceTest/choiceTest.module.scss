@@ -1,0 +1,122 @@
+.header_text {
+  display: grid;
+  margin: 0 auto;
+
+  width: 280px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.67;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  @media (min-width: 768px) {
+    width: 650px;
+    margin: 0 auto;
+    padding-top: 80px;
+
+    font-size: 22px;
+    line-height: 1.36;
+  }
+
+  @media (min-width: 1280px) {
+    padding-top: 120px;
+  }
+}
+
+.name_text {
+  width: 130px;
+  margin: 0 auto;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  padding-top: 12px;
+
+  border-top: var(--color-border-bottom);
+
+  @media (min-width: 768px) {
+    width: 321px;
+
+    font-size: 18px;
+    line-height: 1.22;
+  }
+}
+
+.desc_text {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  margin-top: 8px;
+
+  color: var(--text-secondary);
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    line-height: 1.21;
+  }
+}
+
+.btn_wrap {
+  text-align: center;
+
+  padding-top: 40px;
+  padding-bottom: 39px;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 125px;
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 133px;
+  }
+}
+
+.tech_btn {
+  @media (min-width: 1280px) {
+    margin-right: 32px;
+  }
+
+  transition: 700ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+  }
+}
+
+.teory_btn {
+  margin-top: 20px;
+
+  @media (min-width: 768px) {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 1280px) {
+    margin: 0;
+  }
+
+  transition: 700ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+  }
+}

@@ -1,0 +1,140 @@
+.header {
+    position: sticky;
+
+    width: 100vw;
+    top: 0;
+    text-align: end;
+
+    background-color: var(--bcg-primary);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 500ms ease-in-out;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        position: fixed;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+       position: relative;
+    }
+}
+
+.isActive {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+
+    background-color: var(--bcg-primary);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 500ms ease-in-out;
+    z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+    .isActive {
+        position: relative;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .isActive {
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .isActive {
+        position: fixed;
+    }
+}
+
+.container_header {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.icon_logout {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-primary);
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.icon_logout:hover,
+.icon_logout:focus {
+    transform: scale(1.05);
+    transition: 500ms ease-in-out;
+    fill: red;
+}
+
+@media screen and (max-width: 767px) {
+    .icon_logout {
+        display: none;
+    }
+}
+
+.wrapper_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    padding: 7px;
+
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 700ms ease-in;
+}
+
+@media screen and (max-width: 767px) {
+    .dark {
+        margin: 0;
+    }
+}
+
+.dark:hover,
+.dark:focus {
+    background-color: rgb(108, 122, 137);
+    transition: 700ms ease-in;
+}
+
+.light {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    margin-right: 10px;
+
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 700ms ease-in;
+}
+
+@media screen and (max-width: 767px) {
+    .light {
+        margin: 0;
+    }
+}
+
+.light:hover,
+.light:focus {
+    background-color: rgb(237, 231, 225);
+    transition: 700ms ease-in;
+}

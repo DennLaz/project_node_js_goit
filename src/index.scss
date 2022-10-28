@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Light theme */
+
+html[data-theme='light'] {
+  --bcg-primary: #f5f6fb;
+  --bcg-second: #ffffff;
+  --bcg-footer: #02172a;
+  --bcg-btn-dark: #02172a;
+  --bcg-btn-active: #ff6c0a;
+  --bcg-btn-light: #ffffff;
+  --bcg-google-btn: #fafafa;
+  --bcg-test-dark: #02172a;
+  --bcg-test-light: #ff6b01;
+  --text-primary: #000000;
+  --text-secondary: #555555;
+  --text-light: #ffffff;
+  --text-footer: rgba(255, 255, 255, 0.4);
+  --text-input-placeholder: #bbbbbb;
+  --color-active-menu: rgb(255, 108, 10);
+  --color-border: #e2e3e5;
+  --color-border-bottom: 1px solid #e5e5e5; /*after title on page*/
+  --color-shodow: rgba(2, 23, 42, 0.1);
+  --color-input: #ced2d1;
+  --diagram-positive: #ff6b01;
+  --diagram-negative: #d7d7d7;
+  --main-font-famali: "Montserrat", sans-serif;
+  --color-border-vector: 1px solid #00122f;
+  --text-materials: #000000;
+  --bgc-questions: #ffffff;
+  --bgc-form: #ffffff;
+  --color-border-result: 1px solid #00122f;
+  --border-result: none;
+  --color-pass-link-hover: rgb(0, 132, 176);
+  --bcg-big-button: #02172a;
+  --color-big-button: #ffffff;
+  --fill-contact-icon: #ff6b01;
+  --shadow-repassword: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark theme */
+
+html[data-theme='dark']{
+  --bcg-primary: #02172A;
+  --bcg-second: #d7d7d7;
+  --bcg-footer: #02172a;
+  --bcg-btn-dark: MediumBlue;
+  --bcg-btn-active: #ff6c0a;
+  --bcg-btn-light: #ffffff;
+  --bcg-google-btn: #fafafa;
+  --bcg-test-dark: #fafafa;
+  --bcg-test-light: #ff6b01;
+  --text-primary: #fafafa;
+  --text-secondary: #555555;
+  --text-light: #ffffff;
+  --text-footer: rgb(50, 50, 50);
+  --text-input-placeholder: #bbbbbb;
+  --color-active-menu: hsl(24, 100%, 52%);
+  --color-border: #e2e3e5;
+  --color-border-bottom: 1px solid #e5e5e5; /*after title on page*/
+  --color-shodow: rgba(255, 255, 255, 0.35) 0px 2px 20px;
+  --color-input: #ced2d1;
+  --diagram-positive: #ff6b01;
+  --diagram-negative: #d7d7d7;
+  --main-font-famali: "Montserrat", sans-serif;
+  --color-border-vector: 1px solid #00122f;
+  --text-materials: #000000;
+  --bgc-questions: RoyalBlue;
+  --bgc-form: SteelBlue;
+  --color-border-result: 1px solid #d7d7d7;
+  --border-result: #ced2d1;
+  --color-pass-link-hover: MediumBlue;
+  --bcg-big-button: #ffffff;
+  --color-big-button: #000000;
+  --fill-contact-icon: RoyalBlue;
+  --shadow-repassword: rgba(255, 255, 255, 0.35) 0px 2px 20px;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bcg-primary);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--main-font-famali);
+  transition: background-color 500ms ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.space .label {
+  color: var(--text-primary);
+}
+
+.space .number {
+  color: var(--text-primary);
+}
+
+.container {
+  padding: 0 10px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 320px) {
+  .container {
+    width: 320px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,117 @@
+.btn {
+    width: 55px;
+    height: 34px;
+    padding: 5px 15px;
+    border: 1px solid var(--border-result);
+    background-color: var(--bcg-btn-light);
+
+    transition: 700ms ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+}
+
+.btn_active {
+    width: 55px;
+    height: 34px;
+    padding: 5px 15px;
+    border: 1px solid var(--border-result);
+    fill: var(--bcg-btn-light);
+    background-color: var(--bcg-btn-active);
+
+    transition: 700ms ease-in-out;
+}
+
+.btn_active:hover,
+.btn_active:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+}
+
+@media screen and (min-width: 768px) {
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 210px;
+        height: 34px;
+        padding: 5px 20px;
+        border: 1px solid var(--border-result);
+        background-color: var(--bcg-btn-light);
+    }
+
+    .btn_active {
+        display: flex;
+        align-items: center;
+        width: 210px;
+        height: 34px;
+        padding: 5px 20px;
+
+        border: 1px solid var(--border-result);
+        color: var(--bcg-btn-light);
+        fill: var(--bcg-btn-light);
+        background-color: var(--bcg-btn-active);
+    }
+}
+
+.text {
+    font-size: 12px;
+    line-height: 14px;
+    transition: 700ms ease-in-out;
+}
+
+.text:hover,
+.text:focus {
+    transform: scale(1.05);
+    transition: 700ms ease-in-out;
+}
+
+.icon_reverse {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    transform: rotate(180deg);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 767px) {
+    .icon_reverse {
+        width: 24px;
+        height: 24px;
+        
+        transform: rotate(180deg);
+    }
+
+    .icon {
+        margin: 0;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.img {
+    width: 40px;
+    height: 34px;
+}
+
+@media screen and (max-width: 767px) {
+    .img {
+    width: 40px;
+    height: 30px;
+    }
+}
