@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: "https://node-project-pro-test.herokuapp.com/api",
+  baseURL: "https://pro-test.onrender.com/api",
 });
 
 const setToken = (token = "") => {
@@ -22,10 +22,8 @@ export const loginInAPI = async (userData) => {
   return data;
 };
 
-export const logoutFromAPI = async (token) => {
-  // const { data } = await instance.post("/users/logout", token);
+export const logoutFromAPI = async () => {
   setToken("");
-  // return data;
 };
 
 export const getCurrentUser = async (token) => {
