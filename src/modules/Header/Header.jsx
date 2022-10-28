@@ -34,6 +34,7 @@ const Header = () => {
     const onMenuClick = () => {
         isOpen ? changeOpen(false) : changeOpen(true);
     };
+
     const handleLightThemeClick = () => {
         setTheme('light')
     }
@@ -51,7 +52,7 @@ const Header = () => {
                 <div><Logo/></div>
                 
                 <div className={style.wrapper}>
-                    {theme === 'dark' ? <div className={style.dark} onClick={handleLightThemeClick}>
+                    {theme === 'dark' ?   <div className={style.dark} onClick={handleLightThemeClick}>
                         <NightlightOutlinedIcon/>
                     </div> : <div className={style.light} onClick={handleDarkThemeClick}>
                         <WbSunnyOutlinedIcon/>
