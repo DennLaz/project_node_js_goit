@@ -15,6 +15,7 @@
   align-items: center;
   width: 100%;
   background-color: var(--bcg-second);
+  background-color: var(--bgc-form);
   box-shadow: var(--shadow-repassword);
 
   @media (min-width: 1280px) {
@@ -56,6 +57,7 @@ thead th:nth-child(3) {
 
 th,
 td {
+  color: var(--text-materials);
   padding: 5px;
 }
 
@@ -81,5 +83,5 @@ thead th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: var(--text-input-placeholder);
+  background-color: var(--diagram-negative);
 }
