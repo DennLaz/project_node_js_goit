@@ -103,12 +103,6 @@
     transition: 700ms ease-in;
 }
 
-@media screen and (max-width: 767px) {
-    .dark {
-        margin: 0;
-    }
-}
-
 .dark:hover,
 .dark:focus {
     background-color: rgb(108, 122, 137);
@@ -125,12 +119,6 @@
     cursor: pointer;
     border-radius: 50%;
     transition: 700ms ease-in;
-}
-
-@media screen and (max-width: 767px) {
-    .light {
-        margin: 0;
-    }
 }
 
 .light:hover,

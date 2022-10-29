@@ -30,8 +30,9 @@ const MobileMenu = ({ onClick, isOpen }) => {
         dispatch(userLogout());
     }
     
-    const privateItems = items.filter(item => item.private === false);
+    const privateItems = items.filter(item => !item.private );
     const publicItems = items.filter(item => item.private === false || item.private !== false);
+    // const secretItems = items.filter(item => item.secret === true);
   
     const elements = privateItems.map(({ id, link, title }) =>
         <li key={id} className={style.item}>
@@ -47,6 +48,13 @@ const MobileMenu = ({ onClick, isOpen }) => {
             </NavLink>
         </li>
     );
+    // const secretElements = secretItems.map(({id, link, title}) => 
+    //     <li key={id} className={style.item}>
+    //     <NavLink className={changeClassNameMobileMenu} to={link}>
+    //         {title}
+    //     </NavLink>
+    //     </li>
+    // );
 
     return (
         createPortal(
@@ -65,6 +73,20 @@ const MobileMenu = ({ onClick, isOpen }) => {
                         </ul>
                     </div>
                     </div>}
+                {/* {!isLogin && isOpen && <div className={style.overlay} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {secretElements}
+                        </ul>
+                    </div>
+                    </div>}
+                {!isLogin && isOpen && <div className={style.open} >
+                     <div className={style.mobile_container} >
+                        <ul className={style.mobile_menu} >
+                            {secretElements}
+                        </ul>
+                    </div>
+                    </div>} */}
                 { isOpen && isLogin ? <div className={style.overlay} >
                      <div className={style.mobile_container} >
                         <ul className={style.mobile_menu} >
