@@ -13,7 +13,7 @@ const fields = [
     post: "Front-End Developer",
     about: "Scram master",
     GitHub: "https://github.com/iryabenkoff",
-    LinkedIn: "https://github.com/iryabenkoff",
+    LinkedIn: "https://www.linkedin.com/in/ihor-riabenko/",
   },
   {
     url: "https://nefalit.github.io/filmoteka/team-lena.741a032d.jpeg",
@@ -45,7 +45,7 @@ const fields = [
     post: "Front-End Developer",
     about: "Developer",
     GitHub: "https://github.com/Tymivv",
-    LinkedIn: "https://github.com/Tymivv",
+    LinkedIn: "https://www.linkedin.com/in/vitaliy-tymiv-6275443a/",
   },
 ];
 export default fields;

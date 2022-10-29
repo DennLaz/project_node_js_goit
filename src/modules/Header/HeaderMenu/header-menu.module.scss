@@ -6,7 +6,18 @@
 
 @media screen and (min-width: 768px) {
     .menu {
+        display: flex;
         margin-left: auto;
+    }
+    .item:not(:last-child) {
+        margin-right: 60px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .item:not(:last-child) {
+        margin-right: 81px;
     }
 }
 
@@ -47,8 +58,17 @@
     transition: 700ms ease-in-out;
 }
 
-.public_item:not(:last-child) {
-    margin-right: 60px;
+@media screen and (min-width: 768px) {
+    .public_item:not(:last-child) {
+            margin-right: 30px;
+        }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .public_item:not(:last-child) {
+            margin-right: 60px;
+    }
 }
 
 .link {
