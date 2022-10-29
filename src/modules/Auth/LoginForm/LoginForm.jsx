@@ -47,7 +47,7 @@ const LoginForm = ({ onSubmit, onClick }) => {
           rel="noreferrer noopener"
         >
           {" "}
-          <svg className={style.icon}>
+          <svg className={style.facebook_icon}>
             <use href={`${sprite}#icon-facebook`}></use>
           </svg>
           Facebook
