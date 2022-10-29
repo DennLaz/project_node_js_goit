@@ -48,6 +48,11 @@ export const sendNewPassword = async (email) => {
 };
 
 export const getUserResult = async (id) => {
-  const { data } = await instance.get(`/users/${id}`);
+  const { data } = await instance.get(`/users/result/${id}`);
+  return data;
+};
+
+export const getTopResult = async () => {
+  const { data } = await instance.get("users/top");
   return data;
 };
