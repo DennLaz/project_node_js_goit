@@ -9,8 +9,7 @@ const ButtonBig = ({ type, text, onClick, accent }) => {
   return (
     
       <button className={`${setClass()}`} onClick={onClick} type={type}>
-        {text}
-        <svg className={style.icon}>
+        {text}<svg className={style.icon}>
           <use href={`${sprite}#icon-vector`}></use>
         </svg>
       </button>
