@@ -123,7 +123,7 @@ const UserResultsPage = () => {
                 className={style.circle}
                 value={100}
                 text={`${total}%`}
-                maxValue={720}
+                maxValue={100}
                 styles={buildStyles({
                   textSize: "16px",
                   textColor: "#f88",
