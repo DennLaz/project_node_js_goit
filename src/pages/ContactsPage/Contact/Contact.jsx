@@ -1,5 +1,6 @@
 import styles from "./contact.module.scss";
-import sprite from "../../../assets/svg/links.svg";
+
+import sprite from "../../../assets/svg/sprite.svg";
 
 const Contact = ({ url, name, post, about, GitHub, LinkedIn }) => {
   return (

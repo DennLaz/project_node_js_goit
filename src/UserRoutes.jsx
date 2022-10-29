@@ -15,6 +15,8 @@ const TestPage = lazy(() => import("./pages/TestPage"));
 const MaterialsPage = lazy(() => import("./pages/MaterialsPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
+const TopResultsPage = lazy(() => import("./pages/TopResultsPage"));
+
 
 const UserRoutes = () => {
   return (
@@ -34,6 +36,7 @@ const UserRoutes = () => {
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/user-results/:id" element={<UserResultsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/top-results" element={<TopResultsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
