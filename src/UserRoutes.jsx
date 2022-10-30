@@ -37,7 +37,6 @@ const UserRoutes = () => {
         <Route path="/user-results/:id" element={<UserResultsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/top-results" element={<TopResultsPage />} />
-
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>

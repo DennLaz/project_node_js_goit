@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+
+import {Link} from "react-router-dom"
+
 import PropTypes from "prop-types";
 
 import useForm from "../../../shared/hooks/useForm";
@@ -7,6 +9,7 @@ import Button from "../../../shared/components/Button/Button";
 
 import fields from "./fields";
 import initialState from "./initialState";
+
 
 import googleImg from "../../../assets/google.png";
 import sprite from "../../../assets/svg/sprite.svg";
@@ -47,7 +50,9 @@ const LoginForm = ({ onSubmit, onClick }) => {
           rel="noreferrer noopener"
         >
           {" "}
+
           <svg className={style.facebook_icon}>
+
             <use href={`${sprite}#icon-facebook`}></use>
           </svg>
           Facebook
@@ -92,3 +97,5 @@ LoginForm.propTypes = {
 };
 
 export default LoginForm;
+
+
