@@ -16,7 +16,6 @@ function HeaderMenu() {
   
   const findItems = items.filter(item => !item.private);
   const publicItems = items.filter(item => item.private === false || item.private === true);
-  // const secretItems = items.filter(item => !item.private && item.secret === true);
 
   const elements = findItems.map(({id, link, title}) => 
     <li key={id} className={style.item}>
@@ -34,14 +33,6 @@ function HeaderMenu() {
     </li>
   );
 
-  // const secretElements = secretItems.map(({id, link, title}) => 
-  //   <li key={id} className={style.item}>
-  //     <NavLink className={changeClassName} to={link}>
-  //       {title}
-  //     </NavLink>
-  //   </li>
-  // );
-
   return (
       <> 
       {
@@ -51,15 +42,6 @@ function HeaderMenu() {
               {elements}
       </ul>
       }
-
-      {/* {
-        isLogin && <div className={style.wrapper}> <ul className={style.public_menu}>
-              {publicElements}
-        </ul></div>}
-      { !isLogin &&   <ul className={style.menu}>
-              {secretElements}
-      </ul>
-      } */}
       </>
   );
 }
