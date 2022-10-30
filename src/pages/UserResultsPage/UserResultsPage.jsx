@@ -121,9 +121,8 @@ const UserResultsPage = () => {
           <p>Avarage mark: </p>
           <CircularProgressbar
                 className={style.circle}
-                value={100}
+                value={total}
                 text={`${total}%`}
-                maxValue={100}
                 styles={buildStyles({
                   textSize: "16px",
                   textColor: "#f88",
