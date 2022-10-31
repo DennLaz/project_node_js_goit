@@ -4,10 +4,10 @@ import sprite from "../../../assets/svg/sprite.svg";
 
 import style from "./logo.module.scss";
 
-function Logo() {
+function Logo({onClick}) {
   return (
     <>
-      <Link to="/">
+      <Link onClick={onClick} to="/">
         <svg className={style.icon}>
           <use href={`${sprite}#icon-logo`}></use>
         </svg>

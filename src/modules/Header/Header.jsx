@@ -35,6 +35,10 @@ const Header = () => {
         isOpen ? changeOpen(false) : changeOpen(true);
     };
 
+        const onUserClick = () => {
+        isOpen && changeOpen(false);
+    };
+
     const handleLightThemeClick = () => {
         setTheme('light')
     }
@@ -49,7 +53,7 @@ const Header = () => {
         <header className={changeStyle}>
             
             <div className={`container ${style.container_header}`}>
-                <div><Logo/></div>
+                <div><Logo onClick={onUserClick} /></div>
                 
                 <div className={style.wrapper}>
                     {theme === 'dark' ?   <div className={style.dark} onClick={handleLightThemeClick}>
@@ -58,7 +62,7 @@ const Header = () => {
                         <WbSunnyOutlinedIcon/>
                     </div>}
                     <HeaderMenu />
-                    <UserInfo />
+                    <UserInfo onClick={onUserClick} />
                     {isLogin && 
                     <svg onClick={onLogout}  className={style.icon_logout}>
                         <use  href={`${sprite}#icon-sign-out`}></use>

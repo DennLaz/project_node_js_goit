@@ -10,7 +10,7 @@ import useAuth from "../../../shared/hooks/useAuth";
 
 import style from "./user-info.module.scss";
 
-function UserInfo() {
+function UserInfo({ onClick, isOpen }) {
     const isMobile = useMediaPredicate("(max-width: 767px)");
     const isLogin = useAuth();
 
@@ -18,7 +18,7 @@ function UserInfo() {
     const id = useSelector(getUserId)
     const navigate = useNavigate()
 
-    const onClick = () => {
+    const onUserClick = () => {
     
     navigate(`/user-results/${id}`)
     
@@ -32,8 +32,8 @@ function UserInfo() {
         <>
             {
             isLogin && (
-                    <div className={style.wrapper} >
-                            <button onClick={onClick} className={style.new_name} >{newName}</button>
+                    <div onClick={onClick} className={style.wrapper} >
+                            {<button onClick={onUserClick} className={style.new_name} >{newName}</button> }
                         <span className={style.name}>{name}</span>
                     </div>
                 )
